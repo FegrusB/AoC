@@ -9,3 +9,20 @@ public class Prob4P1 {
 	}
 
 }
+ 
+//class to store board information
+class board {
+
+	
+	private int[][] boardNums;
+	private int[] numsList;
+	
+	public board(int[][] boardNums, int[] nums){
+		this.boardNums = boardNums;
+		this.numsList = nums;
+	}
+	
+	public int[][] getBoard(){return boardNums;}
+	
+	
+}

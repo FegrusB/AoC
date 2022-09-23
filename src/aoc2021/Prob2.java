@@ -6,30 +6,17 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 
-class instruction {
-	
-	private String dir;
-	private int degree;
-	
-	public instruction(String dir, int degree) {
-		this.dir = dir;
-		this.degree = degree;
-	}
-	
-	public String getDir() {return dir;}
-	public int getDegree() {return degree;}
-	
-}
-
+//Solve for day two of AoC2021
+//Given a series of inputs with a direction and a magnitude, calculate final position
 public class Prob2 {
 
 	public static void main(String[] args) {
-		//try to find file, copy file to ArrayList data. Catch if file not found
-				
+	
 		int xPos = 0;
 		int depth = 0;
 		int aim = 0;
 		
+		//try to find file, copy file to ArrayList data of type instruction. Each line = 1 instruction, dir and magnitude split with " ". Catch if file not found
 		ArrayList <instruction> data = new ArrayList<instruction>();
 		try {
 			File myFile = new File("C:\\Users\\fergu\\eclipse-workspace\\aoc2021\\data\\2021-2.txt");
@@ -45,19 +32,38 @@ public class Prob2 {
 			e.printStackTrace();
 		}
 	
-		
+		//for each instruction, select based on dir, then modify appropriate pos value.
+		//for part 2 down + up modifies aim rather than y
 		for(instruction i:data) {	
 			switch (i.getDir()) {
-				case "forward": xPos += i.getDegree(); depth = depth + aim * i.getDegree();break;
-				case "down": aim += i.getDegree();break;
-				case "up": aim -= i.getDegree();break;
+				case "forward": xPos += i.getMagnitude(); depth = depth + aim * i.getMagnitude();break;
+				case "down": aim += i.getMagnitude();break;
+				case "up": aim -= i.getMagnitude();break;
 			}
 		}
 	
+		//print final output
 		System.out.println((xPos*depth));
 	
 	
 	
 	}
-
 }
+	
+//simple class for storing instruction data.
+//2 vars, set on construction + getters for each
+class instruction {
+	
+	private String dir;
+	private int magnitude;
+	
+	public instruction(String dir, int magnitude) {
+		this.dir = dir;
+		this.magnitude = magnitude;
+	}
+	
+	public String getDir() {return dir;}
+	public int getMagnitude() {return magnitude;}
+	
+}
+

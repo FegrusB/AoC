@@ -5,6 +5,8 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
+//Solve for day one of AoC2021
+//Problem, check if sea floor is descending, based on a series of int inputs. First comparing x to x-1 then (x-1 + x + x+1) to (x + x+1 + x+2)
 public class Prob1 {
 
 	public static void main(String[] args) {

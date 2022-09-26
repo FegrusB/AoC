@@ -17,7 +17,8 @@ public class Prob3P1 {
 		//try to find file, copy file to ArrayList data of type boolean arrays, representing binary. 
 		ArrayList <boolean[]> data = new ArrayList<boolean[]>();
 		try {
-			File myFile = new File("C:\\Users\\fergu\\eclipse-workspace\\aoc2021\\data\\2021-3.txt");
+			String mainAdd = new File("").getAbsolutePath();
+			File myFile = new File(mainAdd + "\\data\\2021-3.txt");
 			Scanner myScanner = new Scanner(myFile);
 			while(myScanner.hasNextLine()) {
 				String nl = myScanner.nextLine();

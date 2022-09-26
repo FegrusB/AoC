@@ -19,7 +19,8 @@ public class Prob1 {
 		
 		//try to find file, copy file to ArrayList data. Catch if file not found
 		try {
-			File myFile = new File("C:\\Users\\fergu\\eclipse-workspace\\aoc2021\\data\\2021-1.txt");
+			String mainAdd = new File("").getAbsolutePath();
+			File myFile = new File(mainAdd + "\\data\\2021-1.txt");
 			Scanner myScanner = new Scanner(myFile);
 			while(myScanner.hasNextLine()) {
 				int nl = myScanner.nextInt();

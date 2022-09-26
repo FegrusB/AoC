@@ -19,7 +19,8 @@ public class Prob2 {
 		//try to find file, copy file to ArrayList data of type instruction. Each line = 1 instruction, dir and magnitude split with " ". Catch if file not found
 		ArrayList <instruction> data = new ArrayList<instruction>();
 		try {
-			File myFile = new File("C:\\Users\\fergu\\eclipse-workspace\\aoc2021\\data\\2021-2.txt");
+			String mainAdd = new File("").getAbsolutePath();
+			File myFile = new File(mainAdd + "\\data\\2021-2.txt");
 			Scanner myScanner = new Scanner(myFile);
 			while(myScanner.hasNextLine()) {
 				String[] nl = myScanner.nextLine().split(" ");

@@ -18,18 +18,27 @@ public class Prob4P1 {
 			File myFile = new File(mainAdd + "\\data\\2021-4a.txt");
 			Scanner myScanner = new Scanner(myFile);
 			String[] randInputS = myScanner.nextLine().split(",");
-			ArrayList<Integer[]> buildBoard = new ArrayList<Integer[]>();
-			
+			Square[][] squares = new Square[5][5];
+			ArrayList<Square[]> buildBoard = new ArrayList<Square[]>();
+			ArrayList<Board> boards = new ArrayList<Board>();
+			int c = 0;
 			while(myScanner.hasNextLine()) {
 				String nl = myScanner.nextLine();
 				if (!(nl == "")) {
 					if( nl.charAt(0) == ' ') {nl = nl.substring(1);}
-				
-					
-					Integer[] IntArr = new Integer[intArr.length]; 
-					for(int i = 0; i<intArr.length;i++){IntArr[i] = Integer.valueOf(intArr[i]);}
-					buildBoard.add(IntArr);
+					nl = nl.replace("  ", " ");
+					Square[] row = new Square[5];
+					String[] split = nl.split(" ");
+					for(int i = 0;i<split.length;i++) {if (!(split[i] == "")) {row[i] = new Square(Integer.parseInt(split[i]));}}
+					squares[c] = row;
+					c++;
+				}else if(c != 0) {
+					System.out.println();
+					boards.add(new Board(squares));
+					Arrays.fill(squares, null);
+					c = 0;
 				}
+				
 			}
 			myScanner.close();
 		} catch (FileNotFoundException e) {
@@ -44,17 +53,17 @@ public class Prob4P1 {
 }
 
 //class to store board information
-class board {
+class Board {
 
 	
-	private square[][] board;
+	private Square[][] board;
 	private HashSet<Integer> numsHash;
 	
-	public board(square[][] boardNums){
+	public Board(Square[][] boardNums){
 		this.board = boardNums.clone();
 	
-		for (square[] row:board) {
-			for(square sq:row) {
+		for (Square[] row:board) {
+			for(Square sq:row) {
 				numsHash.add(sq.getNum());
 			}
 		}
@@ -69,8 +78,8 @@ class board {
 
 	public void setSquare(int in) {
 		
-		for (square[] row:board) {
-			for(square sq:row) {
+		for (Square[] row:board) {
+			for(Square sq:row) {
 				if( in == sq.getNum()) { sq.setChecked();break;}
 			}
 		}
@@ -79,15 +88,15 @@ class board {
 }
 
 //simple class to store number and checked for a single square. Num is gettable, checked is gettable and settable 
-class square{
+class Square{
 	
 	private int num;
 	private boolean checked;
 	
 	//constructor, just takes initial values.
-	public square(int numIn, boolean checkedIn) {
+	public Square(int numIn) {
 		this.num = numIn;
-		this.checked = checkedIn;
+		this.checked = false;
 	}
 	
 	//getter and setter for checked. getter for num.

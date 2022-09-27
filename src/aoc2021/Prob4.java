@@ -8,48 +8,44 @@ import java.util.HashSet;
 import java.util.Scanner;
 
 //Solve for day four, part one of AoC2021
-public class Prob4P1 {
+
+
+
+public class Prob4 {
 
 	public static void main(String[] args) {
 		
-		try {
-			
-			String mainAdd = new File("").getAbsolutePath();
-			File myFile = new File(mainAdd + "\\data\\2021-4a.txt");
-			Scanner myScanner = new Scanner(myFile);
-			String[] randInputS = myScanner.nextLine().split(",");
-			Square[][] squares = new Square[5][5];
-			ArrayList<Square[]> buildBoard = new ArrayList<Square[]>();
-			ArrayList<Board> boards = new ArrayList<Board>();
-			int c = 0;
-			while(myScanner.hasNextLine()) {
-				String nl = myScanner.nextLine();
-				if (!(nl == "")) {
-					if( nl.charAt(0) == ' ') {nl = nl.substring(1);}
-					nl = nl.replace("  ", " ");
-					Square[] row = new Square[5];
-					String[] split = nl.split(" ");
-					for(int i = 0;i<split.length;i++) {if (!(split[i] == "")) {row[i] = new Square(Integer.parseInt(split[i]));}}
-					squares[c] = row;
-					c++;
-				}else if(c != 0) {
-					System.out.println();
-					boards.add(new Board(squares));
-					Arrays.fill(squares, null);
-					c = 0;
-				}
-				
+		Scanner myScanner;
+		myScanner = GetScanner.get("\\data\\2021-4a.txt");
+		
+		String[] randInputS = myScanner.nextLine().split(",");
+		Square[][] squares = new Square[5][5];
+		ArrayList<Square[]> buildBoard = new ArrayList<Square[]>();
+		ArrayList<Board> boards = new ArrayList<Board>();
+		int c = 0;
+		while(myScanner.hasNextLine()) {
+			String nl = myScanner.nextLine();
+			if (!(nl == "")) {
+				if( nl.charAt(0) == ' ') {nl = nl.substring(1);}
+				nl = nl.replace("  ", " ");
+				Square[] row = new Square[5];
+				String[] split = nl.split(" ");
+				for(int i = 0;i<split.length;i++) {if (!(split[i] == "")) {row[i] = new Square(Integer.parseInt(split[i]));}}
+				squares[c] = row;
+				c++;
+			}else if(c != 0) {
+				System.out.println();
+				boards.add(new Board(squares));
+				Arrays.fill(squares, null);
+				c = 0;
 			}
-			myScanner.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("File not found.");
-			e.printStackTrace();
-		} 
+			
+		}
+		myScanner.close();
 		
 		System.out.println();
 
 	}
-
 }
 
 //class to store board information
@@ -61,10 +57,11 @@ class Board {
 	
 	public Board(Square[][] boardNums){
 		this.board = boardNums.clone();
+		this.numsHash = new HashSet<Integer>();
 	
 		for (Square[] row:board) {
 			for(Square sq:row) {
-				numsHash.add(sq.getNum());
+				this.numsHash.add(sq.getNum());
 			}
 		}
 	}

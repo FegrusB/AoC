@@ -9,38 +9,72 @@ import java.util.Scanner;
 //Given a series of binary return two new binaries.
 //take first the most, then least common bit in each position, and removing all binaries that dont share this bit
 //return decimal value of final remaining binary
-public class Prob3P2 {
+public class Prob3 {
 	
 	public static void main(String[] args) {
 		
 		int len = 0;
-		
-		//try to find file, copy file to ArrayList data of type boolean arrays, representing binary.
 		ArrayList <boolean[]> data = new ArrayList<boolean[]>();
-		try {
-			String mainAdd = new File("").getAbsolutePath();
-			File myFile = new File(mainAdd + "\\data\\2021-3.txt");
-			Scanner myScanner = new Scanner(myFile);
-			while(myScanner.hasNextLine()) {
-				String nl = myScanner.nextLine();
-				len = nl.length();
-				boolean[] nB = new boolean[len];
-				for(int i = 0; i<nl.length();i++){ char c = nl.charAt(i); if(c == '1') {nB[i] = true;}}
-				data.add(nB);
-			}
-			myScanner.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("File not found.");
-			e.printStackTrace();
-		} 
-
+		
+		//Use GetScanner to create scanner, of unseparated 0/1 chars, representing binary, copy ArrayList data of boolean arrays. 
+		Scanner myScanner;
+		myScanner = GetScanner.get("2021-3.txt");
+		while(myScanner.hasNextLine()) {
+			String nl = myScanner.nextLine();
+			len = nl.length();
+			boolean[] nB = new boolean[len];
+			for(int i = 0; i<nl.length();i++){ char c = nl.charAt(i); if(c == '1') {nB[i] = true;}}
+			data.add(nB);
+		}
+		myScanner.close();
+	
+		////pass data ArrayList, length to gammaEpsilon, returns int[], returns[0] = gamma, [1] = epsilon
+		//problem 1 solution is gamma * epsilon. Print.
+		int[] gammaEpsilon = gammaEpsilon(data, len);		
+		int out = gammaEpsilon[0]*gammaEpsilon[1];
+		System.out.println("Problem 1 solution: " + out);
+		
+		
 		//pass data ArrayList, length, and bool for oxy or co2. returns a decimal int from getDec
+		//problem 2 solution is oxy * co2. Print.
 		int oxy = getRating(data,len,false);
 		int co2 = getRating(data,len,true);
+		out = oxy*co2;
+		System.out.println("Problem 2 solution: " + out);
 
-		//print final value
-		System.out.println(oxy*co2);
+	}
+	
+	public static int[] gammaEpsilon(ArrayList<boolean[]> dataIn,int len) {
+		
+		int[] returns = new int[2];
+		@SuppressWarnings("unchecked")
+		ArrayList<boolean[]> data = (ArrayList<boolean[]>) dataIn.clone();
+		
+		//create arrs for analysing data
+		int[] count = new int[len];
+		boolean[] out = new boolean[len];
+		
+		//count number of Ts in each position, store in count
+		for (boolean[] binary:data) {
+			for (int c = 0;c<len;c++){
+				if(binary[c]) {count[c] += 1;}
+			}
+		}
+		
+		//for each position, if position value of count > half the size of data, 1s are more common, store T in out
+		int s = data.size()/2;
+		for(int c = 0;c<len;c++) {if(count[c]>s||count[c]==s){out[c] = true;}}
 
+		//pass binaries to getDec, returns equivalent decimal value. this is gamma, store in returns[0]
+		returns[0] = getDec(out);
+		
+		//binary NOT out, to get least common bit of each pos. pass to getDec store result in returns[1] this is epsilon
+		for(int c = 0;c<len;c++) {out[c] = !out[c];};
+		returns[1] =  getDec(out);
+		
+		//
+		return returns;
+		
 	}
 	
 	//function to calculate oxygen or co2 rating from data. 

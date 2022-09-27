@@ -16,22 +16,13 @@ public class Prob1 {
 		int numDeeper = 0;
 		int lastNum;
 		int x = 1;
-		
-		//try to find file, copy file to ArrayList data. Catch if file not found
-		try {
-			String mainAdd = new File("").getAbsolutePath();
-			File myFile = new File(mainAdd + "\\data\\2021-1.txt");
-			Scanner myScanner = new Scanner(myFile);
-			while(myScanner.hasNextLine()) {
-				int nl = myScanner.nextInt();
-				data.add(nl);
-			}
-			myScanner.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("File not found.");
-			e.printStackTrace();
-		}
-		
+
+		//Use GetScanner to create scanner, of single ints on single lines, read scanner into data
+		Scanner myScanner;
+		myScanner = GetScanner.get("2021-1.txt");
+		while(myScanner.hasNextLine()) {int nl = myScanner.nextInt(); data.add(nl);}
+		myScanner.close();
+
 		//create ArrayList of 3 reading windows, of each reading from data where there is a full 3
 		while(data.size()>(x+1)) {
 			int sum = data.get(x-1) + data.get(x) + data.get(x+1);

@@ -15,24 +15,19 @@ public class Prob2 {
 		int xPos = 0;
 		int depth = 0;
 		int aim = 0;
-		
-		//try to find file, copy file to ArrayList data of type instruction. Each line = 1 instruction, dir and magnitude split with " ". Catch if file not found
 		ArrayList <instruction> data = new ArrayList<instruction>();
-		try {
-			String mainAdd = new File("").getAbsolutePath();
-			File myFile = new File(mainAdd + "\\data\\2021-2.txt");
-			Scanner myScanner = new Scanner(myFile);
-			while(myScanner.hasNextLine()) {
-				String[] nl = myScanner.nextLine().split(" ");
-				instruction nI = new instruction(nl[0],Integer.parseInt(nl[1]));
-				data.add(nI);
-			}
-			myScanner.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("File not found.");
-			e.printStackTrace();
+		
+		//Use GetScanner to create scanner, of lines with string dir and int magnitute, copy to data arraylist w/ type instruction. 
+		//Each line = 1 instruction, dir and magnitude split with " 
+		Scanner myScanner;
+		myScanner = GetScanner.get("2021-2.txt");
+		while(myScanner.hasNextLine()) {
+			String[] nl = myScanner.nextLine().split(" ");
+			instruction nI = new instruction(nl[0],Integer.parseInt(nl[1]));
+			data.add(nI);
 		}
-	
+		myScanner.close();
+
 		//for each instruction, select based on dir, then modify appropriate pos value.
 		//for part 2 down + up modifies aim rather than y
 		for(instruction i:data) {	

@@ -1,7 +1,5 @@
 package aoc2021;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -16,11 +14,10 @@ public class Prob4 {
 	public static void main(String[] args) {
 		
 		Scanner myScanner;
-		myScanner = GetScanner.get("\\data\\2021-4a.txt");
+		myScanner = GetScanner.get("2021-4a.txt");
 		
 		String[] randInputS = myScanner.nextLine().split(",");
 		Square[][] squares = new Square[5][5];
-		ArrayList<Square[]> buildBoard = new ArrayList<Square[]>();
 		ArrayList<Board> boards = new ArrayList<Board>();
 		int c = 0;
 		while(myScanner.hasNextLine()) {
@@ -34,19 +31,86 @@ public class Prob4 {
 				squares[c] = row;
 				c++;
 			}else if(c != 0) {
-				System.out.println();
 				boards.add(new Board(squares));
 				Arrays.fill(squares, null);
 				c = 0;
 			}
 			
 		}
+		boards.add(new Board(squares));
 		myScanner.close();
 		
-		System.out.println();
+		play1(randInputS,boards);
+		play2(randInputS,boards);
 
 	}
+	
+	private static void play1(String[] randInputS,ArrayList<Board> boardsIn) {
+
+		ArrayList<Board> boards = new ArrayList<Board>();
+		for (Board b:boardsIn) {
+			Board nB = new Board(b);
+			boards.add(nB);
+			
+		}
+		
+		int score = 0;
+		int count = 0;
+		int checkNum = 0;
+		
+		while(score == 0) {
+			checkNum = Integer.parseInt(randInputS[count]);
+			int countB = 0;
+			
+			while (score == 0 && countB<boards.size()) {
+				score = boards.get(countB).check(checkNum);
+				countB ++;
+			}
+			count++;
+		}
+		
+		System.out.println(score);
+		System.out.println(checkNum);
+			
+	}
+	private static void play2(String[] randInputS,ArrayList<Board> boardsIn) {
+
+
+		ArrayList<Board> boards = new ArrayList<Board>();
+		for (Board b:boardsIn) {
+			Board nB = new Board(b);
+			boards.add(nB);
+		}
+	
+		int score = 0;
+		int count = 0;
+		int checkNum = 0;
+		int won = 0;
+		
+		while(won<boards.size()) {
+			checkNum = Integer.parseInt(randInputS[count]);
+			int countB = 0;
+			
+			while (countB<boards.size()) {
+				score = boards.get(countB).check(checkNum);
+				countB ++;
+			}
+			
+			if(!(score == 0)) {
+				won++;
+
+			}
+			count++;
+		}
+		
+		System.out.println(score);
+		System.out.println(checkNum);
+			
+	}
+	
 }
+
+
 
 //class to store board information
 class Board {
@@ -66,21 +130,72 @@ class Board {
 		}
 	}
 	
-	public boolean checkHash(int i) {
+	public Board(Board ob) {
+		this.board = ob.board;
+		this.numsHash = ob.numsHash;
+	}
+	
+	private boolean checkHash(int i) {
 		
 		boolean present = numsHash.contains(i);
 		
 		return present;
 	}
 
-	public void setSquare(int in) {
+	private void setSquare(int in) {
 		
 		for (Square[] row:board) {
 			for(Square sq:row) {
 				if( in == sq.getNum()) { sq.setChecked();break;}
 			}
+		}	
+	}
+	
+	private boolean checkFin() {	
+		
+		int count = 0;
+		
+		for(int x = 0; x<5;x++){
+			for(int y = 0;y<5;y++){
+				if(board[x][y].getChecked()) {count++;}
+				if (count==5) {return true;}
+			}
+			count = 0;
+		}
+		for(int y = 0;y<5;y++) {
+			for(int x = 0;x<5;x++) {
+				if(board[x][y].getChecked()) {count++;}
+				if (count==5) {return true;}
+			}
+			count = 0;
+		}
+		return false;
+	}
+	private int getScore() {
+		
+		int score = 0;
+		
+		for(int x = 0; x<5;x++) {
+			for(int y = 0;y<5;y++) {
+				if(!(board[x][y].getChecked())) {score = score + board[x][y].getNum();}
+			}
 		}
 		
+		return score;
+	}
+	
+	public int check(int in) {
+		
+		int score = 0;
+
+		if(this.checkHash(in)){
+			setSquare(in);
+			if(checkFin()) {
+				score = getScore();
+			}
+		}
+		return score * in;
+	
 	}
 }
 

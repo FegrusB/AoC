@@ -131,8 +131,14 @@ class Board {
 	}
 	
 	public Board(Board ob) {
-		this.board = ob.board;
 		this.numsHash = ob.numsHash;
+		this.board = new Square[5][5];
+		
+		for(int x = 0; x<5;x++){
+			for(int y = 0;y<5;y++){
+				this.board[x][y] = new Square(ob.board[x][y]);
+			}
+		}
 	}
 	
 	private boolean checkHash(int i) {
@@ -208,6 +214,10 @@ class Square{
 	//constructor, just takes initial values.
 	public Square(int numIn) {
 		this.num = numIn;
+		this.checked = false;
+	}
+	public Square(Square s) {
+		this.num = s.num;
 		this.checked = false;
 	}
 	

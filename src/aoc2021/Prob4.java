@@ -14,7 +14,7 @@ public class Prob4 {
 	public static void main(String[] args) {
 		
 		Scanner myScanner;
-		myScanner = GetScanner.get("2021-4a.txt");
+		myScanner = GetScanner.get("2021-4.txt");
 		
 		String[] randInputS = myScanner.nextLine().split(",");
 		Square[][] squares = new Square[5][5];
@@ -86,24 +86,27 @@ public class Prob4 {
 		int count = 0;
 		int checkNum = 0;
 		int won = 0;
+		int saveScore = 0;
 		
 		while(won<boards.size()) {
+			
+			if (count>(randInputS.length-1)) {break;}
 			checkNum = Integer.parseInt(randInputS[count]);
+			
 			int countB = 0;
 			
 			while (countB<boards.size()) {
-				score = boards.get(countB).check(checkNum);
+				if(!(boards.get(countB).getFinished())) {
+					score = boards.get(countB).check(checkNum);
+					if(!(score == 0)) {won++;saveScore = score;}
+				}
+				score = 0;
 				countB ++;
-			}
-			
-			if(!(score == 0)) {
-				won++;
-
 			}
 			count++;
 		}
 		
-		System.out.println(score);
+		System.out.println(saveScore);
 		System.out.println(checkNum);
 			
 	}
@@ -115,12 +118,13 @@ public class Prob4 {
 //class to store board information
 class Board {
 
-	
+	private boolean finished;
 	private Square[][] board;
 	private HashSet<Integer> numsHash;
 	
 	public Board(Square[][] boardNums){
 		this.board = boardNums.clone();
+		this.finished = false;
 		this.numsHash = new HashSet<Integer>();
 	
 		for (Square[] row:board) {
@@ -132,6 +136,7 @@ class Board {
 	
 	public Board(Board ob) {
 		this.numsHash = ob.numsHash;
+		this.finished = false;
 		this.board = new Square[5][5];
 		
 		for(int x = 0; x<5;x++){
@@ -141,6 +146,8 @@ class Board {
 		}
 	}
 	
+	public boolean getFinished() { return finished;}
+
 	private boolean checkHash(int i) {
 		
 		boolean present = numsHash.contains(i);
@@ -198,6 +205,7 @@ class Board {
 			setSquare(in);
 			if(checkFin()) {
 				score = getScore();
+				finished = true;
 			}
 		}
 		return score * in;

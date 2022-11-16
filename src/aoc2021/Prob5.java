@@ -22,6 +22,31 @@ public class Prob5 {
 			lines.add(line);
 		}	
 		
+		//play game with board size 10, lines array, and false for check diagonal
+		int out = play1(10,lines,false);
+		System.out.println(out);
+		
+	}
+	
+	public static int play1(int size,ArrayList<Line> lines, boolean checkD) {
+		
+		//build board with given size
+		int[][] board = new int[size][size];
+		
+		//for each point in each line of lines.
+		//if line is not diagonal or check diagonal = true. increment board[x][y]
+		for(Line line:lines) {
+			if (checkD||!(line.diag)) {
+				for(int[] point:line.points) {board[point[0]][point[1]] += 1;}
+			}
+		}
+		
+		//get and return largest int from board
+		int max = 0;
+		for(int[] x:board) {
+			for(int y:x) {if(y>max) {max = y;}}
+		}
+		return max;
 	}
 
 }

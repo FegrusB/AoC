@@ -23,7 +23,7 @@ public class Prob5 {
 		}	
 		
 		//play game with board size 10, lines array, and false for check diagonal
-		int out = play1(1000,lines,false);
+		int out = play1(1000,lines,true);
 		System.out.println(out);
 		
 	}

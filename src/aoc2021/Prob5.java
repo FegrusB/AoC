@@ -8,7 +8,7 @@ public class Prob5 {
 	public static void main(String[] args) {
 
 		//sets up input scanner, and needed objects/vars 
-		Scanner myScanner = GetScanner.get("2021-5a.txt");
+		Scanner myScanner = GetScanner.get("2021-5.txt");
 		ArrayList<Line> lines = new ArrayList<>();
 		
 		//clean input, then populate lines with lines from scanner.
@@ -23,7 +23,7 @@ public class Prob5 {
 		}	
 		
 		//play game with board size 10, lines array, and false for check diagonal
-		int out = play1(10,lines,false);
+		int out = play1(1000,lines,false);
 		System.out.println(out);
 		
 	}
@@ -41,12 +41,12 @@ public class Prob5 {
 			}
 		}
 		
-		//get and return largest int from board
-		int max = 0;
+		//get and return num of intersections from board
+		int intersections = 0;
 		for(int[] x:board) {
-			for(int y:x) {if(y>max) {max = y;}}
+			for(int y:x) {if(y>1) {intersections ++;}}
 		}
-		return max;
+		return intersections;
 	}
 
 }

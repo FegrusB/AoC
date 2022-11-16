@@ -10,7 +10,8 @@ public class Prob5 {
 		//sets up input scanner, and needed objects/vars 
 		Scanner myScanner = GetScanner.get("2021-5a.txt");
 		ArrayList<Line> lines = new ArrayList<>();
-			
+		
+		//clean input, then populate lines with lines from scanner.
 		while (myScanner.hasNextLine()) {
 			String nl = myScanner.nextLine();
 			String[] spL = nl.split(" ");
@@ -19,9 +20,7 @@ public class Prob5 {
 			points[1] = spL[2].split(",");
 			Line line = new Line(points);
 			lines.add(line);
-		}
-		
-		System.out.println();
+		}	
 		
 	}
 
@@ -29,56 +28,55 @@ public class Prob5 {
 
 class Line{
 	
-	private int[][] points;
+	public int[][] points;
 	public boolean diag;
 	
 	public Line(String[][] pointsS) {
 
-		int numPoints = 0;
-		int xInc = 0;
-		int yInc = 0;
-		
 		int x1 = Integer.parseInt(pointsS[0][0]);
 		int y1 = Integer.parseInt(pointsS[0][1]);
 		
 		int x2 = Integer.parseInt(pointsS[1][0]);
 		int y2 = Integer.parseInt(pointsS[1][1]);
-		
+
 		int dx = x1 - x2;
 		int dy = y1 - y2;
 		
+		//check if line is diagonal
 		if (dx != 0 && dy != 0) {
 			this.diag = true;
 		}
 		
-		if (Math.abs(dx) > Math.abs(dy)) {numPoints = Math.abs(dx);}
-		else { numPoints = Math.abs(dy);}
+		//use absolute value of bigger dx/dy to set the length of line, use to set size of points array.
+		int length;
+		if (Math.abs(dx) > Math.abs(dy)) {length = (Math.abs(dx)+1);}
+		else { length = (Math.abs(dy)+1);}
+		this.points = new int[length][2];
 		
-		this.points = new int[numPoints+1][2];
-		
-		if (dx > 0) {xInc = -1;}
-		else if (dx == 0) {xInc = 0;}
-		else {xInc = 1;}
-		
-		if(dy > 0) {yInc = -1;}
-		else if (dy == 0) {yInc = 0;}
-		else{yInc = 1;}
-		
+		int xInc = getInc(dx);
+		int yInc = getInc(dy);
+
 		int curX = x1;
 		int curY = y1;
 		
-		for (int i = 0; i < numPoints + 1; i++) {
-			
+		//build line. For each point increment x/y by xInc/yInc
+		for (int i = 0; i < length; i++) {
 			points[i][0] = curX;
 			points[i][1] = curY;
-			
 			curX += xInc;
 			curY += yInc;
-			
 		}
 		
-		System.out.println();
+	}
+	private int getInc(int in) {
+		//get increment for building line line
+		int out;
 		
+		if(in > 0) {out = -1;}
+		else if (in == 0) {out = 0;}
+		else{out = 1;}
+		
+		return out;
 	}
 	
 }

@@ -2,7 +2,6 @@ package aoc2021;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
 import java.util.Scanner;
 
 public class Prob6 {
@@ -10,11 +9,15 @@ public class Prob6 {
 	public static void main(String[] args) {
 		
 		//Read in starting fish to arraylist
-		Scanner myScanner = GetScanner.get("2021-6a.txt");
+		Scanner myScanner = GetScanner.get("2021-6.txt");
 		String[] line = myScanner.nextLine().split(",");
-		ArrayList<Integer> fish = new ArrayList<>(Arrays.stream(line).mapToInt(Integer::parseInt).boxed().toList());
+		ArrayList<Integer> fishSetup = new ArrayList<>(Arrays.stream(line).mapToInt(Integer::parseInt).boxed().toList());
+		long[] fish = new long[9];
 		
-		System.out.println(play1(fish,80));
+		//count number of fish at each stage, store in fish
+		for(int i = 0; i<9;i++) {for(Integer x:fishSetup) {if(x==i) {fish[i]++;}}}
+		
+		System.out.println(play2(fish,256));
 	}
 	public static int play1(ArrayList<Integer> fish, int days) {
 	
@@ -35,6 +38,37 @@ public class Prob6 {
 		
 		//return final num of fish
 		return fish.size();
+	}
+	
+	public static long play2(long[] fish, int days) {
+		
+		
+		long last = 0;
+		long next = 0;
+		
+		//loop through each possible age, each day move fish at each age down one.
+		//if at age 0 move fish to age 6, add in more at age 8
+		for(int i = 0;i<days;i++) {	
+			for(int age = 8;age>-1;age--) {
+				if(age ==0) {
+					last = next;
+					fish[8] = fish[age];
+					fish[6] += fish[age];
+					fish[age]=last;
+				} else {
+					last = next;
+					next = fish[age];
+					fish[age] = last;
+				}
+			}
+		
+		}
+		
+		//sum num of fish at each age.
+		long sum = 0;
+		for(long x:fish) {sum+=x;}
+		return sum;
+		
 	}
 
 }

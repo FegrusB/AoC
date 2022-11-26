@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="" />
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob6.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,7 +21,12 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectId" id="2I5PAy57rUAQapYkbs5SJwueRDz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -22,11 +39,43 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "last_opened_file_path": "C:/Users/fergu/InteliJ/AoC2021",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "configurable.group.editor"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="Prob6" type="Application" factoryName="Application" nameIsGenerated="true">
+      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+      <option name="MAIN_CLASS_NAME" value="aoc2021.Prob6" />
+      <module name="AoC2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aoc2021.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="AoC2021" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="AoC2021" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -36,6 +85,18 @@
       <option name="presentableId" value="Default" />
       <updated>1669468337245</updated>
     </task>
+    <task id="LOCAL-00001" summary="Switch to intelij">
+      <created>1669468851066</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669468851066</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Switch to intelij" />
+    <option name="LAST_COMMIT_MESSAGE" value="Switch to intelij" />
   </component>
 </project>

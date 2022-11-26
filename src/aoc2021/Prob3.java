@@ -1,22 +1,20 @@
 package aoc2021;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 //Solve for day three, part two of AoC2021
 //Given a series of binary return two new binaries.
-//take first the most, then least common bit in each position, and removing all binaries that dont share this bit
+//take first the most, then least common bit in each position, and removing all binaries that don't share this bit
 //return decimal value of final remaining binary
 public class Prob3 {
 	
 	public static void main(String[] args) {
 		
 		int len = 0;
-		ArrayList <boolean[]> data = new ArrayList<boolean[]>();
+		ArrayList <boolean[]> data = new ArrayList<>();
 		
-		//Use GetScanner to create scanner, of unseparated 0/1 chars, representing binary, copy ArrayList data of boolean arrays. 
+		//Use GetScanner to create scanner, of un-separated 0/1 chars, representing binary, copy ArrayList data of boolean arrays.
 		Scanner myScanner;
 		myScanner = GetScanner.get("2021-3.txt");
 		while(myScanner.hasNextLine()) {
@@ -50,7 +48,7 @@ public class Prob3 {
 		@SuppressWarnings("unchecked")
 		ArrayList<boolean[]> data = (ArrayList<boolean[]>) dataIn.clone();
 		
-		//create arrs for analysing data
+		//create arrays for analysing data
 		int[] count = new int[len];
 		boolean[] out = new boolean[len];
 		
@@ -68,8 +66,8 @@ public class Prob3 {
 		//pass binaries to getDec, returns equivalent decimal value. this is gamma, store in returns[0]
 		returns[0] = getDec(out);
 		
-		//binary NOT out, to get least common bit of each pos. pass to getDec store result in returns[1] this is epsilon
-		for(int c = 0;c<len;c++) {out[c] = !out[c];};
+		//binary NOT out, to get the least common bit of each pos. pass to getDec store result in returns[1] this is epsilon
+		for(int c = 0;c<len;c++) {out[c] = !out[c];}
 		returns[1] =  getDec(out);
 		
 		//
@@ -78,7 +76,7 @@ public class Prob3 {
 	}
 	
 	//function to calculate oxygen or co2 rating from data. 
-	//for each position, take the most common bit for oxy, and least for co2. Remove every binary that doesnt match this bit, then move on to next position.
+	//for each position, take the most common bit for oxy, and least for co2. Remove every binary that doesn't match this bit, then move on to next position.
 	//return decimal from getDec from last remaining binary
 	public static int getRating (ArrayList<boolean[]> dataIn, int len, boolean rating) {
 		
@@ -91,7 +89,7 @@ public class Prob3 {
 		//while there is more than 1 remaining data
 		while (!(data.size()==1)){ 
 			
-			//s recalculated each loop to account for removed entries. rems redeclared to account for changed size
+			//s recalculated each loop to account for removed entries. rems is to re-declared to account for changed size
 			float s = (float) data.size()/2;
 			boolean rem;
 			boolean[] rems = new boolean[data.size()]; 
@@ -99,15 +97,15 @@ public class Prob3 {
 			//get most common bit in position c
 			for (boolean[] binary:data) {if(binary[c]) {count[c] += 1;}}
 			
-			//if current bit is most common rem = rating. rating = T for oxy F for co2
+			//if current bit is the most common rem = rating. rating = T for oxy F for co2
 			//else rem = !rating
 			if(count[c]>s||count[c]==s){ rem = rating;}
 			else{rem  = !rating;}
 			
-			//get each entry left in data, if bit at current position = rem, add rems at same index = T
+			//get each entry left in data, if a bit at current position = rem, add rems at same index = T
 			for(int x = 0; x<data.size();x++) {boolean[] testing = data.get(x);if(testing[c] == rem){rems[x] = true;}}
 				
-			//for each entry where rems = t remove entry from data. Start from top to not effect indexing.
+			//for each entry where rems = t remove entry from data. Start from top to not affect indexing.
 			for(int i = rems.length - 1; i>-1;i--) {if(rems[i]) {data.remove(i);}}
 			
 			//Increment bit position

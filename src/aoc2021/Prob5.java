@@ -53,7 +53,7 @@ public class Prob5 {
 
 class Line{
 	
-	public int[][] points;
+	public final int[][] points;
 	public boolean diag;
 	
 	public Line(String[][] pointsS) {
@@ -94,14 +94,13 @@ class Line{
 		
 	}
 	private int getInc(int in) {
-		//get increment for building line line
-		int out;
-		
-		if(in > 0) {out = -1;}
-		else if (in == 0) {out = 0;}
-		else{out = 1;}
-		
-		return out;
+		//get increment for building line
+
+		//noinspection UseCompareMethod
+		if(in > 0) {return  -1;}
+		else if (in == 0) {return  0;}
+		else{return  1;}
+
 	}
 	
 }

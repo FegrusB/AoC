@@ -1,9 +1,6 @@
 package aoc2021;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Scanner;
+import java.util.*;
 
 //Solve for day four, part one of AoC2021
 //Plays games of bingo. play1 prints the score of the first to win, play2 prints the last.
@@ -16,16 +13,16 @@ public class Prob4 {
 		Scanner myScanner;
 		myScanner = GetScanner.get("2021-4.txt");
 		Square[][] squares = new Square[5][5];
-		ArrayList<Board> boards = new ArrayList<Board>();
+		ArrayList<Board> boards = new ArrayList<>();
 		
 		//First line of scanner = ints split with "," this is read in as randInputS
 		String[] randInputS = myScanner.nextLine().split(",");
 		
-		//next boards is populated with Boards,  
+		//next, boards is populated with Boards,
 		int c = 0;
 		while(myScanner.hasNextLine()) {
 			String nl = myScanner.nextLine();
-			if (!(nl == "")) {
+			if (!(Objects.equals(nl, ""))) {
 				
 				//Input is cleaned into " " separated ints, 
 				if( nl.charAt(0) == ' ') {nl = nl.substring(1);}
@@ -34,7 +31,7 @@ public class Prob4 {
 				String[] split = nl.split(" ");
 				
 				//these are formed into row, an array of Squares. When row is finished add to squares a 2d array of Squares.
-				for(int i = 0;i<split.length;i++) {if (!(split[i] == "")) {row[i] = new Square(Integer.parseInt(split[i]));}}
+				for(int i = 0;i<split.length;i++) {if (!(Objects.equals(split[i], ""))) {row[i] = new Square(Integer.parseInt(split[i]));}}
 				squares[c] = row;
 				c++;
 			}else if(c != 0) {
@@ -59,18 +56,18 @@ public class Prob4 {
 	private static void play1(String[] randInputS,ArrayList<Board> boardsIn) {
 
 		//Create new instance of board, copied from boardsIn. Initialise needed vars
-		ArrayList<Board> boards = new ArrayList<Board>();
+		ArrayList<Board> boards = new ArrayList<>();
 		for (Board b:boardsIn) {Board nB = new Board(b);boards.add(nB);}
 		int score = 0;
 		int count = 0;
-		int checkNum = 0;
+		int checkNum;
 		
-		//untill score is set, play game
+		//until score is set, play game
 		while(score == 0) {
 			checkNum = Integer.parseInt(randInputS[count]);
 			int countB = 0;
 			
-			//Iterate through boards, passing chechNum to each. check() will return 0 if number not present on board, and an int score if it is.
+			//Iterate through boards, passing checkNum to each. check() will return 0 if number not present on board, and an int score if it is.
 			while (score == 0 && countB<boards.size()) {
 				score = boards.get(countB).check(checkNum);
 				countB ++;
@@ -86,11 +83,11 @@ public class Prob4 {
 	private static void play2(String[] randInputS,ArrayList<Board> boardsIn) {
 
 		//Create new instance of board, copied from boardsIn. Initialise needed vars
-		ArrayList<Board> boards = new ArrayList<Board>();
+		ArrayList<Board> boards = new ArrayList<>();
 		for (Board b:boardsIn) {Board nB = new Board(b);boards.add(nB);}
-		int score = 0;
+		int score;
 		int count = 0;
-		int checkNum = 0;
+		int checkNum;
 		int won = 0;
 		int saveScore = 0;
 		
@@ -102,14 +99,16 @@ public class Prob4 {
 			checkNum = Integer.parseInt(randInputS[count]);
 			
 			//Iterate through boards. If board has not already won, get score.
-			for (int i = 0;i<boards.size();i++) {
-				if(!(boards.get(i).getFinished())) {
-					score = boards.get(i).check(checkNum);
-					
+			for (Board board : boards) {
+				if (!(board.getFinished())) {
+					score = board.check(checkNum);
+
 					//is score is not 0, board has won, increment won, and store score, so not overwritten
-					if(!(score == 0)) {won++;saveScore = score;}
+					if (!(score == 0)) {
+						won++;
+						saveScore = score;
+					}
 				}
-				score = 0;
 			}
 			count++;
 		}
@@ -126,20 +125,20 @@ public class Prob4 {
 class Board {
 
 	private boolean finished;
-	private Square[][] board;
-	private HashSet<Integer> numsHash;
+	private final Square[][] board;
+	private final HashSet<Integer> numsHash;
 	
 	//standard constructor. takes a 2d array of squares, representing the board. Builds numsHash, containing all ints featured on board. Sets finished to false.
 	public Board(Square[][] boardNums){
 		this.board = boardNums.clone();
 		this.finished = false;
-		this.numsHash = new HashSet<Integer>();
+		this.numsHash = new HashSet<>();
 		for (Square[] row:board) {
 			for(Square sq:row) {this.numsHash.add(sq.getNum());}
 		}
 	}
 	
-	//clone constructor. Takes a board, and copies it. Copies values square values from ob.board into new Square objects, copies numsHash, resets finished to false 
+	//clone constructor. Takes a board, and copies it. Copies values, square values from ob.board into new Square objects, copies numsHash, resets finished to false
 	public Board(Board ob) {
 		this.numsHash = ob.numsHash;
 		this.finished = false;
@@ -153,7 +152,7 @@ class Board {
 	public boolean getFinished() { return finished;}
 
 	//checks an input int against numHash, returns true bool if there is a match
-	private boolean checkHash(int i) {boolean present = numsHash.contains(i);return present;}
+	private boolean checkHash(int i) {return numsHash.contains(i);}
 
 	//takes an int, checks each Square in board for corresponding int, sets Square.checked to True for match, then break as each int only represented once.
 	private void setSquare(int in) {
@@ -185,7 +184,7 @@ class Board {
 			count = 0;
 		}
 		
-		//neither columns or rows are complete, so return default false value.
+		//neither columns nor rows are complete, so return default false value.
 		return false;
 	}
 	
@@ -222,7 +221,7 @@ class Board {
 //simple class to store number and checked for a single square. Num is gettable, checked is gettable and settable 
 class Square{
 	
-	private int num;
+	private final int num;
 	private boolean checked;
 	
 	//constructor, takes num and sets checked to false.

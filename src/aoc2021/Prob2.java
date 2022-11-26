@@ -1,7 +1,5 @@
 package aoc2021;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,9 +13,9 @@ public class Prob2 {
 		int xPos = 0;
 		int depth = 0;
 		int aim = 0;
-		ArrayList <instruction> data = new ArrayList<instruction>();
+		ArrayList <instruction> data = new ArrayList<>();
 		
-		//Use GetScanner to create scanner, of lines with string dir and int magnitute, copy to data arraylist w/ type instruction. 
+		//Use GetScanner to create scanner, of lines with string dir and int magnitude, copy to data arraylist w/ type instruction.
 		//Each line = 1 instruction, dir and magnitude split with " 
 		Scanner myScanner;
 		myScanner = GetScanner.get("2021-2.txt");
@@ -30,11 +28,14 @@ public class Prob2 {
 
 		//for each instruction, select based on dir, then modify appropriate pos value.
 		//for part 2 down + up modifies aim rather than y
-		for(instruction i:data) {	
-			switch (i.getDir()) {
-				case "forward": xPos += i.getMagnitude(); depth = depth + aim * i.getMagnitude();break;
-				case "down": aim += i.getMagnitude();break;
-				case "up": aim -= i.getMagnitude();break;
+		for(instruction i:data) {
+			switch (i.dir()) {
+				case "forward" -> {
+					xPos += i.magnitude();
+					depth = depth + aim * i.magnitude();
+				}
+				case "down" -> aim += i.magnitude();
+				case "up" -> aim -= i.magnitude();
 			}
 		}
 	
@@ -45,21 +46,11 @@ public class Prob2 {
 	
 	}
 }
-	
+
 //simple class for storing instruction data.
 //2 vars, set on construction + getters for each
-class instruction {
-	
-	private String dir;
-	private int magnitude;
-	
-	public instruction(String dir, int magnitude) {
-		this.dir = dir;
-		this.magnitude = magnitude;
-	}
-	
-	public String getDir() {return dir;}
-	public int getMagnitude() {return magnitude;}
-	
+record instruction(String dir, int magnitude) {
+
+
 }
 

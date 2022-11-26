@@ -1,7 +1,5 @@
 package aoc2021;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -11,8 +9,8 @@ public class Prob1 {
 
 	public static void main(String[] args) {
 		
-		ArrayList <Integer> data = new ArrayList<Integer>();
-		ArrayList <Integer> data3 = new ArrayList<Integer>();
+		ArrayList <Integer> data = new ArrayList<>();
+		ArrayList <Integer> data3 = new ArrayList<>();
 		int numDeeper = 0;
 		int lastNum;
 		int x = 1;

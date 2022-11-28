@@ -5,19 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/2021-7a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/aoc2021/Prob7.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob6.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -26,7 +28,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2I5PAy57rUAQapYkbs5SJwueRDz" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -36,14 +38,16 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "last_opened_file_path": "C:/Users/fergu/InteliJ/AoC2021",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "configurable.group.editor"
+    "settings.editor.selected.configurable": "advanced.settings"
   }
 }]]></component>
   <component name="RunManager">
@@ -92,11 +96,23 @@
       <option name="project" value="LOCAL" />
       <updated>1669468851066</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="26/11/2022 switch to intelij, fixed warnings etc, added project files">
+      <created>1669500976421</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1669500976421</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Switch to intelij" />
-    <option name="LAST_COMMIT_MESSAGE" value="Switch to intelij" />
+    <MESSAGE value="26/11/2022 switch to intelij, fixed warnings etc, added project files" />
+    <option name="LAST_COMMIT_MESSAGE" value="26/11/2022 switch to intelij, fixed warnings etc, added project files" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

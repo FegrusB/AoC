@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="26/11/2022 switch to intelij, fixed warnings etc, added project files">
-      <change afterPath="$PROJECT_DIR$/data/2021-7.txt" afterDir="false" />
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="30/11/2022 finished quick sort. added fuel calc, solved for 7.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob7.java" afterDir="false" />
     </list>
@@ -100,7 +99,7 @@
       <updated>1669468337245</updated>
       <workItem from="1669652786004" duration="361000" />
       <workItem from="1669823234859" duration="190000" />
-      <workItem from="1669823437499" duration="2056000" />
+      <workItem from="1669823437499" duration="4552000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>
@@ -116,7 +115,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669500976421</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="30/11/2022 finished quick sort. added fuel calc, solved for 7.1">
+      <created>1669825941253</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1669825941253</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,7 +142,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Switch to intelij" />
     <MESSAGE value="26/11/2022 switch to intelij, fixed warnings etc, added project files" />
-    <option name="LAST_COMMIT_MESSAGE" value="26/11/2022 switch to intelij, fixed warnings etc, added project files" />
+    <MESSAGE value="30/11/2022 finished quick sort. added fuel calc, solved for 7.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="30/11/2022 finished quick sort. added fuel calc, solved for 7.1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

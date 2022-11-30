@@ -13,15 +13,64 @@ public class Prob7 {
 
         int[] sortedCrabs = quicksort(crabs,0,crabs.length-1);
 
-        int endPos = sortedCrabs[(sortedCrabs.length/2)];
+
+        System.out.println(play1(sortedCrabs));
+        System.out.println(play2(sortedCrabs));
+
+    }
+
+    public  static int play1(int[] inArr){
+
+        int endPos = inArr[(inArr.length/2)];
         int totFuel = 0;
 
-        for(int pos : sortedCrabs){
+        for(int pos : inArr){
             if(pos < endPos){totFuel += endPos-pos;}
             else { totFuel += pos - endPos;}
         }
+        return totFuel;
+    }
 
-        System.out.println(totFuel);
+    public static long play2(int[] inArr){
+
+        double avgF;
+        int tot = 0;
+
+
+        for ( int pos: inArr) {tot += pos;}
+        avgF = tot / (float) inArr.length;
+
+        int goalPos = (int) Math.round(avgF);
+
+        return fuelUsedItt(inArr,goalPos);
+
+    }
+
+    public static long fuelUsedItt(int[] inArr, int goalPos){
+
+        long fuelUsed = 0;
+
+        for( int pos : inArr){
+
+
+            int d;
+            int stepCost= 1;
+
+            if (pos < goalPos){d = 1;}
+            else              {d = -1;}
+
+            while (pos != goalPos - 1){
+
+                pos += d;
+
+                fuelUsed += stepCost;
+                stepCost++;
+
+            }
+
+        }
+
+        return fuelUsed;
 
     }
     public static int[] quicksort(int[] arrIn, int first, int last){

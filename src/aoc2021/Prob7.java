@@ -8,12 +8,20 @@ public class Prob7 {
     public static void main(String[] args) {
 
         //Read in starting fish to arraylist
-        Scanner myScanner = GetScanner.get("2021-7a.txt");
+        Scanner myScanner = GetScanner.get("2021-7.txt");
         int[] crabs = Arrays.stream(myScanner.nextLine().split(",")).mapToInt(Integer::parseInt).toArray();
 
-        int[] sortedCrabs = quicksort(crabs,crabs[0],crabs[crabs.length-1]);
+        int[] sortedCrabs = quicksort(crabs,0,crabs.length-1);
 
+        int endPos = sortedCrabs[(sortedCrabs.length/2)];
+        int totFuel = 0;
 
+        for(int pos : sortedCrabs){
+            if(pos < endPos){totFuel += endPos-pos;}
+            else { totFuel += pos - endPos;}
+        }
+
+        System.out.println(totFuel);
 
     }
     public static int[] quicksort(int[] arrIn, int first, int last){
@@ -25,7 +33,7 @@ public class Prob7 {
             quicksort(arrIn, first, pivot-1);
             quicksort(arrIn, pivot + 1, last);
         }
-
+        return arrIn;
     }
 
     public static int getPivot(int[] arrIn, int first, int last){
@@ -43,6 +51,12 @@ public class Prob7 {
             }
 
         }
+
+        int swap = arrIn[i+1];
+        arrIn[i+1] = arrIn[last];
+        arrIn[last] = swap;
+
+        return i + 1;
 
     }
 

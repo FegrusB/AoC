@@ -42,7 +42,8 @@ public class Prob7 {
 
         int goalPos = (int) Math.round(avgF);
 
-        return fuelUsedItt(inArr,goalPos);
+        System.out.println(fuelUsedItt(inArr,goalPos));
+        return fuelUsedTri(inArr,goalPos);
 
     }
 
@@ -72,6 +73,24 @@ public class Prob7 {
 
         return fuelUsed;
 
+    }
+
+    public static long fuelUsedTri(int[] inArr, int goalPos){
+
+        long fuelUsed = 0;
+        goalPos --;
+
+        for( int pos : inArr){
+
+            int n;
+            if (pos < goalPos){ n = goalPos - pos;}
+            else              {n = pos  - goalPos;}
+
+            fuelUsed += (long) n * (n + 1 ) / 2;
+
+        }
+
+        return fuelUsed;
     }
     public static int[] quicksort(int[] arrIn, int first, int last){
 

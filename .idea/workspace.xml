@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="30/11/2022 finished quick sort. added fuel calc, solved for 7.1">
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="solved for 7.2 with iterative fuel calc">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob7.java" afterDir="false" />
     </list>
@@ -99,7 +99,7 @@
       <updated>1669468337245</updated>
       <workItem from="1669652786004" duration="361000" />
       <workItem from="1669823234859" duration="190000" />
-      <workItem from="1669823437499" duration="4552000" />
+      <workItem from="1669823437499" duration="5100000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>
@@ -122,7 +122,14 @@
       <option name="project" value="LOCAL" />
       <updated>1669825941253</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="solved for 7.2 with iterative fuel calc">
+      <created>1669828555377</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1669828555377</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -143,7 +150,8 @@
     <MESSAGE value="Switch to intelij" />
     <MESSAGE value="26/11/2022 switch to intelij, fixed warnings etc, added project files" />
     <MESSAGE value="30/11/2022 finished quick sort. added fuel calc, solved for 7.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="30/11/2022 finished quick sort. added fuel calc, solved for 7.1" />
+    <MESSAGE value="solved for 7.2 with iterative fuel calc" />
+    <option name="LAST_COMMIT_MESSAGE" value="solved for 7.2 with iterative fuel calc" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

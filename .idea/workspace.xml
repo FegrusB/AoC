@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="solved for 9.1">
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="started solve for 9.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob9.java" afterDir="false" />
     </list>
@@ -101,7 +101,8 @@
       <workItem from="1669823234859" duration="190000" />
       <workItem from="1669823437499" duration="8173000" />
       <workItem from="1669910513830" duration="13179000" />
-      <workItem from="1669992090312" duration="8083000" />
+      <workItem from="1669992090312" duration="8773000" />
+      <workItem from="1670341073916" duration="4304000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>
@@ -180,7 +181,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670001505737</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="started solve for 9.2">
+      <created>1670004509722</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1670004509722</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -220,7 +228,8 @@
     <MESSAGE value="comments and refactoring." />
     <MESSAGE value="02/12/2022 added data and class for prob 9" />
     <MESSAGE value="solved for 9.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="solved for 9.1" />
+    <MESSAGE value="started solve for 9.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="started solve for 9.2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -229,11 +238,26 @@
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="12" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/aoc2021/Prob9.java</url>
+          <line>49</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="y" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
     <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AoC2021$Prob9.ic" NAME="Prob9 Coverage Results" MODIFIED="1670347739553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>aoc2021.*</FILTER>
+    </SUITE>
   </component>
 </project>

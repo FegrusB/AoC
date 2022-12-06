@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="started solve for 9.2">
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="06/12/2022 added recursive solve for 9.2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob9.java" afterDir="false" />
     </list>
@@ -102,7 +102,7 @@
       <workItem from="1669823437499" duration="8173000" />
       <workItem from="1669910513830" duration="13179000" />
       <workItem from="1669992090312" duration="8773000" />
-      <workItem from="1670341073916" duration="4304000" />
+      <workItem from="1670341073916" duration="5834000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>
@@ -188,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670004509722</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="06/12/2022 added recursive solve for 9.2">
+      <created>1670349696782</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1670349696783</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -229,7 +236,8 @@
     <MESSAGE value="02/12/2022 added data and class for prob 9" />
     <MESSAGE value="solved for 9.1" />
     <MESSAGE value="started solve for 9.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="started solve for 9.2" />
+    <MESSAGE value="06/12/2022 added recursive solve for 9.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="06/12/2022 added recursive solve for 9.2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -238,11 +246,6 @@
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="12" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/aoc2021/Prob9.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

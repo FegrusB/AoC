@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="add data and class for problem 9. Solve for 9.1">
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="12/12/2022 finished problem 10.2">
+      <change afterPath="$PROJECT_DIR$/src/aoc2021/Prob11.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob10.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +105,7 @@
       <workItem from="1670341073916" duration="5872000" />
       <workItem from="1670353379449" duration="3061000" />
       <workItem from="1670599301674" duration="679000" />
-      <workItem from="1670863303348" duration="4858000" />
+      <workItem from="1670863303348" duration="6305000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>
@@ -212,7 +212,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670356460782</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="12/12/2022 finished problem 10.2">
+      <created>1670868522138</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1670868522138</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +263,8 @@
     <MESSAGE value="06/12/2022 added recursive solve for 9.2" />
     <MESSAGE value="refactoring and comments." />
     <MESSAGE value="add data and class for problem 9. Solve for 9.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="add data and class for problem 9. Solve for 9.1" />
+    <MESSAGE value="12/12/2022 finished problem 10.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="12/12/2022 finished problem 10.2" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -265,6 +273,11 @@
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="12" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/aoc2021/Prob11.java</url>
+          <line>22</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -272,11 +285,6 @@
         <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
       </pinned-members>
     </pin-to-top-manager>
-    <watches-manager>
-      <configuration name="Application">
-        <watch expression="scores.get(24).value" language="JAVA" />
-      </configuration>
-    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

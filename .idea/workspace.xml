@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="12/12/2022 finished problem 10.2">
-      <change afterPath="$PROJECT_DIR$/src/aoc2021/Prob11.java" afterDir="false" />
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="add class and test input for 11">
+      <change afterPath="$PROJECT_DIR$/data/2021-11a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/aoc2021/boardWithBoundaries.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob11.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob9.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,41 +57,6 @@
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
 }</component>
-  <component name="RunManager">
-    <configuration name="Prob6" type="Application" factoryName="Application" nameIsGenerated="true">
-      <option name="ALTERNATIVE_JRE_PATH" value="openjdk-19" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
-      <option name="MAIN_CLASS_NAME" value="aoc2021.Prob6" />
-      <module name="AoC2021" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="aoc2021.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Prob7" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="aoc2021.Prob7" />
-      <module name="AoC2021" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="aoc2021.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.Prob7" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -105,7 +73,8 @@
       <workItem from="1670341073916" duration="5872000" />
       <workItem from="1670353379449" duration="3061000" />
       <workItem from="1670599301674" duration="679000" />
-      <workItem from="1670863303348" duration="6305000" />
+      <workItem from="1670863303348" duration="6335000" />
+      <workItem from="1670879356892" duration="2982000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>
@@ -219,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670868522138</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="add class and test input for 11">
+      <created>1670870149849</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1670870149849</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +240,8 @@
     <MESSAGE value="refactoring and comments." />
     <MESSAGE value="add data and class for problem 9. Solve for 9.1" />
     <MESSAGE value="12/12/2022 finished problem 10.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="12/12/2022 finished problem 10.2" />
+    <MESSAGE value="add class and test input for 11" />
+    <option name="LAST_COMMIT_MESSAGE" value="add class and test input for 11" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -273,11 +250,6 @@
           <properties class="java.lang.ArrayIndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="12" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/aoc2021/Prob11.java</url>
-          <line>22</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

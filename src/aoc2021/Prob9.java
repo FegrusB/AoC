@@ -1,9 +1,7 @@
 package aoc2021;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
-import java.util.Scanner;
 
 public class Prob9 {
 
@@ -12,20 +10,9 @@ public class Prob9 {
 
     public static void main(String[] args){
 
-        //Read in starting nums into int array.
-        Scanner myScanner = GetScanner.get("2021-9.txt");
-        int[][] boardIn = new int[xBounds][yBounds];
-        int count = 0;
-        while (myScanner.hasNext()) {
-            int[] row = Arrays.stream(myScanner.nextLine().split("")).mapToInt(Integer::parseInt).toArray();
-            boardIn[count] = row;
-            count ++;
-        }
+        //build board of ints with boundary of 10s
+        int[][] board = boardWithBoundaries.build("2021-9.txt",xBounds,yBounds,10);
 
-        //add 10s for boundary, by copying into larger array.
-        int[][] board = new int[xBounds+2][yBounds+2];
-        for(int[] row : board){Arrays.fill(row,10);}
-        for (int i = 1; i < xBounds+1;i++) {System.arraycopy(boardIn[i - 1], 0, board[i], 1, yBounds);}
 
         //loop through all points finding low points, if a bottom point, send to searchStart to find size of basin. Add returned int to basins.
         ArrayList<Integer> basins = new ArrayList<>();

@@ -1,7 +1,5 @@
 package aoc2021;
 
-import java.util.Arrays;
-import java.util.Scanner;
 
 public class Prob11 {
 
@@ -10,22 +8,29 @@ public class Prob11 {
 
     public static void main(String[] args){
 
-        //Read in starting nums into int array.
-        Scanner myScanner = GetScanner.get("2021-11a.txt");
-        int[][] boardIn = new int[xBounds][yBounds];
-        int count = 0;
-        while (myScanner.hasNext()) {
-            int[] row = Arrays.stream(myScanner.nextLine().split("")).mapToInt(Integer::parseInt).toArray();
-            boardIn[count] = row;
-            count ++;
-        }
+        //Build board of ints with boundary of 0s
+        board board =  new board(xBounds,yBounds);
 
         System.out.println();
 
 
     }
+}
+class board{
 
+    private int[][] board;
 
+    public board(int xBounds, int yBounds){
 
+        this.board = boardWithBoundaries.build("2021-11a.txt",xBounds,yBounds,0);
 
+    }
+
+    public int getPos(int[] pos) {
+        return board[pos[0]][pos[1]];
+    }
+
+    public void setPos(int valIn, int[] pos) {
+        this.board[pos[0]][pos[1]] = valIn;
+    }
 }

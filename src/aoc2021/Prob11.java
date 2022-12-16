@@ -12,15 +12,18 @@ public class Prob11 {
 
         //Build board of ints with boundary of 0s
         Board11 board =  new Board11(xBounds,yBounds);
-        int steps = 100;
+        int steps = 500;
+
         int count = 0;
-
         for(int i = 0; i < steps ; i++){
+            //if all have flashed print step
+            if(checkAll(board)){System.out.println(i);}
             board.resetChanged();
-            for(int x = 1; x < xBounds + 1; x ++){
 
+            for(int x = 1; x < xBounds + 1; x ++){
                 for( int y = 1; y < yBounds+1; y++){
                     int[] pos = {x, y};
+                    //if flashed already continue.
                     if(board.getPos(pos) == 0){if(board.getChanged(pos)){continue;}}
                     board.incPos(pos);
                     if( board.getPos(pos) > 9){ count = count +  flash(board,pos);}
@@ -50,6 +53,15 @@ public class Prob11 {
 
         }
         return countF;
+    }
+    public static boolean checkAll(Board11 board){
+        boolean flashed = true;
+        for(int x = 1; x < xBounds+1; x++){
+            for(int y = 1; y<yBounds+1;y++){
+                if(!board.getChanged(new int[] {x,y})){ flashed = false;}
+            }
+        }
+        return flashed;
     }
 }
 class Board11 {

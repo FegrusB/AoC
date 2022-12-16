@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="add class and test input for 11">
-      <change afterPath="$PROJECT_DIR$/data/2021-11a.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/aoc2021/boardWithBoundaries.java" afterDir="false" />
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob11.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob9.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

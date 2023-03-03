@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AnalysisUIOptions">
-    <option name="SCOPE_TYPE" value="3" />
-  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/src/aoc2021/Prob11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aoc2021/Prob11.java" afterDir="false" />
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="moved code for creating int arrays with boarder to class for reuse">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +39,6 @@
     &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/fergu/InteliJ/AoC2021&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -73,7 +69,12 @@
       <workItem from="1670353379449" duration="3061000" />
       <workItem from="1670599301674" duration="679000" />
       <workItem from="1670863303348" duration="6335000" />
-      <workItem from="1670879356892" duration="2982000" />
+      <workItem from="1670879356892" duration="3051000" />
+      <workItem from="1670953377428" duration="131000" />
+      <workItem from="1675962973334" duration="698000" />
+      <workItem from="1676026677151" duration="599000" />
+      <workItem from="1676813452616" duration="7000" />
+      <workItem from="1677250360372" duration="620000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>
@@ -194,21 +195,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670870149849</updated>
     </task>
-    <task id="LOCAL-00018" summary="16/12/2022 solve for 11.1, recursive flash">
-      <created>1671226281045</created>
+    <task id="LOCAL-00018" summary="moved code for creating int arrays with boarder to class for reuse">
+      <created>1670892322135</created>
       <option name="number" value="00018" />
       <option name="presentableId" value="LOCAL-00018" />
       <option name="project" value="LOCAL" />
-      <updated>1671226281045</updated>
+      <updated>1670892322135</updated>
     </task>
-    <task id="LOCAL-00019" summary="solve for 11.2">
-      <created>1671226877563</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1671226877563</updated>
-    </task>
-    <option name="localTasksCounter" value="20" />
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,9 +248,8 @@
     <MESSAGE value="add data and class for problem 9. Solve for 9.1" />
     <MESSAGE value="12/12/2022 finished problem 10.2" />
     <MESSAGE value="add class and test input for 11" />
-    <MESSAGE value="16/12/2022 solve for 11.1, recursive flash" />
-    <MESSAGE value="solve for 11.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="solve for 11.2" />
+    <MESSAGE value="moved code for creating int arrays with boarder to class for reuse" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved code for creating int arrays with boarder to class for reuse" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

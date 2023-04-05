@@ -9,64 +9,76 @@ public class Prob15 {
 
         Scanner myScanner = GetScanner.get("2021-15.txt");
 
-        boolean[][] visitedBoard = new boolean[100][100];
         int[][] valueBoard = new int[100][100];
-
+        boolean[][] visitedBoard = new boolean[100][100];
+        PriorityQueue<weightedCord> unvisitedQueue = new PriorityQueue<>();
         int x = 0;
         while (myScanner.hasNext()) {
             String line = myScanner.nextLine();
-            for (int i = 0; i < 100; i++) {
-                valueBoard[x][i] = Integer.parseInt(String.valueOf(line.charAt(i)));
-                visitedBoard[x][i] = false;
+            for (int y = 0; y < 100; y++) {
+                valueBoard[x][y] = Integer.parseInt(String.valueOf(line.charAt(y)));
+                visitedBoard[x][y] = false;
+                unvisitedQueue.add(new weightedCord(x,y));
             }
             x++;
         }
 
-        int startCords[] = {0, 0};
-        ArrayList<Integer> shortest = new ArrayList<>();
-        shortest.add(1800);
-        visitedBoard[0][0] = true;
-        findSafestRoute(visitedBoard.clone(), valueBoard, startCords, 0, shortest);
-        System.out.println(shortest.get(0) - 1);
+        weightedCord init = unvisitedQueue.poll();
+        init.distance = 0;
+        unvisitedQueue.add(init);
+
+        System.out.println(findPath(unvisitedQueue,valueBoard,visitedBoard));
 
     }
 
-    public static int findSafestRoute(boolean[][] visitedBoardIn, int[][] valueBoard, int[] currCords, int total, ArrayList<Integer> shortest) {
+    public static int findPath(PriorityQueue<weightedCord> unvisitedQueue, int[][] valueBoard, boolean[][] visitedBoard){
 
-        boolean[][] visitedBoard = new boolean[100][100];
+        boolean finished = false;
 
-        for(int x = 0;x < 100; x++){
+        while(! finished) {
 
-            visitedBoard[x] = visitedBoardIn[x].clone();
-
-        }
-
-        visitedBoard[currCords[0]][currCords[1]] = true;
-        total += valueBoard[currCords[0]][currCords[1]];
-
-        if (total > shortest.get(0)) {
-            return 0;
-        }
-        if (!(currCords[0] == 99 && currCords[1] == 99)) {
+            weightedCord check = unvisitedQueue.poll();
+            if (check.x == 99 && check.y == 99) {return check.distance;}
 
             int[][] cordDiffs = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 
             for (int[] diffs : cordDiffs) {
+                int nextX = check.x + diffs[0];
+                int nextY = check.y + diffs[1];
 
-                int nextX = currCords[0] + diffs[0];
-                int nextY = currCords[1] + diffs[1];
+                if ((nextX < 0 || nextX > 99) || (nextY < 0 || nextY > 99)) {continue;}
+                if (visitedBoard[nextX][nextY]){continue;}
 
-                if ((nextX < 0 || nextX > 99) || (nextY < 0 || nextY > 99)) {
-                    continue;
-                }
-                if (!visitedBoard[nextX][nextY]) {
-                    findSafestRoute(visitedBoard, valueBoard, new int[]{nextX, nextY}, total, shortest);
-                }
+                unvisitedQueue.add(new weightedCord(nextX,nextY, check.distance + valueBoard[nextX][nextY]));
+                visitedBoard[nextX][nextY] = true;
+
             }
-        } else {
-            shortest.add(0, total);
-            return total;
+
         }
+
         return 0;
+
+    }
+}
+class weightedCord implements Comparable<weightedCord>{
+    int distance;
+    final int x;
+    final int y;
+
+    public weightedCord(int x, int y){
+        this.x = x;
+        this.y = y;
+        distance = 10000;
+    }
+    public weightedCord(int x, int y, int distance){
+        this.x = x;
+        this.y = y;
+        this.distance = distance;
+    }
+    public void setDistance(int distanceIn){this.distance = distanceIn;}
+
+    @Override
+    public int compareTo(weightedCord o) {
+        return this.distance - o.distance;
     }
 }

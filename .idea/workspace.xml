@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="09/03/2023 solve for 14 parts a and b.">
-      <change afterPath="$PROJECT_DIR$/data/2021-15.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/2021-15a.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob15.java" afterDir="false" />
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="04/04/2023 unoptimized search for part 15 a">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob15.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,31 +39,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/fergu/InteliJ/AoC2021",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Global Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "duplicates.index",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/fergu/InteliJ/AoC2021&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;duplicates.index&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Prob15">
     <configuration name="Prob12" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="aoc2021.Prob12" />
@@ -146,7 +144,8 @@
       <workItem from="1678361086300" duration="600000" />
       <workItem from="1678366065066" duration="16442000" />
       <workItem from="1680191810050" duration="2000" />
-      <workItem from="1680596629952" duration="16256000" />
+      <workItem from="1680596629952" duration="19356000" />
+      <workItem from="1680684315707" duration="897000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>
@@ -302,7 +301,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678390330410</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="04/04/2023 unoptimized search for part 15 a">
+      <created>1680620709659</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1680620709659</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -353,7 +359,8 @@
     <MESSAGE value="05/03/2023 Added Maven to project. Added solve for part 12" />
     <MESSAGE value="09/03/2023 solve for 13 parts a and b." />
     <MESSAGE value="09/03/2023 solve for 14 parts a and b." />
-    <option name="LAST_COMMIT_MESSAGE" value="09/03/2023 solve for 14 parts a and b." />
+    <MESSAGE value="04/04/2023 unoptimized search for part 15 a" />
+    <option name="LAST_COMMIT_MESSAGE" value="04/04/2023 unoptimized search for part 15 a" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -373,6 +380,11 @@
         <PinnedItemInfo parentTag="java.lang.String" memberName="value" />
       </pinned-members>
     </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="Application">
+        <watch expression="valueBoard" />
+      </configuration>
+    </watches-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

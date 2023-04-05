@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="04/04/2023 unoptimized search for part 15 a">
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="05/04/2023 djkstra solve for 15 part a">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob15.java" afterDir="false" />
     </list>
@@ -145,7 +145,7 @@
       <workItem from="1678366065066" duration="16442000" />
       <workItem from="1680191810050" duration="2000" />
       <workItem from="1680596629952" duration="19356000" />
-      <workItem from="1680684315707" duration="897000" />
+      <workItem from="1680684315707" duration="3512000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>
@@ -308,7 +308,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680620709659</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="05/04/2023 djkstra solve for 15 part a">
+      <created>1680686361571</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1680686361571</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,7 +367,8 @@
     <MESSAGE value="09/03/2023 solve for 13 parts a and b." />
     <MESSAGE value="09/03/2023 solve for 14 parts a and b." />
     <MESSAGE value="04/04/2023 unoptimized search for part 15 a" />
-    <option name="LAST_COMMIT_MESSAGE" value="04/04/2023 unoptimized search for part 15 a" />
+    <MESSAGE value="05/04/2023 djkstra solve for 15 part a" />
+    <option name="LAST_COMMIT_MESSAGE" value="05/04/2023 djkstra solve for 15 part a" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -373,6 +381,11 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="37" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/aoc2021/Prob15.java</url>
+          <line>67</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

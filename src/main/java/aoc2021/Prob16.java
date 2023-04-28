@@ -9,6 +9,7 @@ import java.util.regex.Pattern;
 public class Prob16 {
 
     public static void main(String[] args) {
+
         Scanner myScanner = GetScanner.get("2021-16a.txt");
         String inString = "";
         while (myScanner.hasNext()){inString = inString.concat(myScanner.nextLine());}
@@ -51,13 +52,13 @@ public class Prob16 {
     }
     public static String decode(ArrayList<String> packets, String inString,int numLoops){
 
+
+
         boolean boundLoop = false;
         int x = 0;
-        Pattern p = Pattern.compile("^[0]+$");
-        Matcher m = p.matcher(inString);
 
-        while ( (!m.matches() && !(inString.length() == 0 ))&& !boundLoop) {
-
+        while ( !(inString.length() < 11 )&& !boundLoop) {
+            System.out.println(inString);
             if (numLoops != 0){ boundLoop = x < numLoops - 1; }
 
             String packetVersion = inString.substring(0, 3);
@@ -73,11 +74,9 @@ public class Prob16 {
                 body = body.substring(1);
                 packets.add(outString + body);
 
-                int cutLength = (bytes * 5) + 6;
+                int cutLength = (bytes * 5);
 
-                cutLength = (cutLength + 3)/ 4 * 4;
-
-                inString = inString.substring(cutLength - 6);
+                inString = inString.substring(cutLength);
                 System.out.println(outString + body);
 
             } else {
@@ -92,9 +91,7 @@ public class Prob16 {
                     decode(packets,body,0);
 
                     int cutLength = length+16;
-                    cutLength = (cutLength + 3)/ 4 * 4;
-
-                    inString = inString.substring(cutLength-1);
+                    inString = inString.substring(cutLength);
 
                 } else {
 
@@ -106,9 +103,6 @@ public class Prob16 {
                 }
 
             }
-
-            m = p.matcher(inString);
-
         }
 
         return inString;

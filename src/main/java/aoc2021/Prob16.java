@@ -1,36 +1,34 @@
 package aoc2021;
 
-import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.Scanner;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 public class Prob16 {
 
     public static void main(String[] args) {
 
-        Scanner myScanner = GetScanner.get("2021-16a.txt");
         String inString = "";
-        while (myScanner.hasNext()){inString = inString.concat(myScanner.nextLine());}
+
+        if( args.length == 0 ) {
+            Scanner myScanner = GetScanner.get("2021-16.txt");
+            while (myScanner.hasNext()) {
+                inString = inString.concat(myScanner.nextLine());
+            }
+        } else {
+            inString = args[0];
+        }
 
         String binString = hexToBin(inString);
-        System.out.println(binString);
-        System.out.println();
-
         ArrayList<String> packets = new ArrayList<>();
 
         decode(packets,binString,0);
 
         int versionCount = 0;
         for(String packet:packets){
-
             versionCount += Integer.parseInt(packet.substring(0,3),2);
-
         }
 
         System.out.println(versionCount);
-
     }
     public static String decodeLiteral(String inString){
 
@@ -47,46 +45,43 @@ public class Prob16 {
 
         }
 
-        return packetLength + outString;
+        return packetLength + ","+ outString;
 
     }
     public static String decode(ArrayList<String> packets, String inString,int numLoops){
-
-
 
         boolean boundLoop = false;
         int x = 0;
 
         while ( !(inString.length() < 11 )&& !boundLoop) {
-            System.out.println(inString);
             if (numLoops != 0){ boundLoop = x < numLoops - 1; }
 
+            //decode and remove version + id
             String packetVersion = inString.substring(0, 3);
             String packetTypeID = inString.substring(3, 6);
             inString = inString.substring(6);
             String outString = packetVersion + "," + packetTypeID + ",";
 
-
             if (packetTypeID.equals("100")) {
+                //decode literal and add to packets
                 String body = "";
                 body = decodeLiteral(inString);
-                int bytes = Character.getNumericValue(body.charAt(0));
-                body = body.substring(1);
-                packets.add(outString + body);
+                String[] bodySplit = body.split(",");
+                int bytes = Integer.parseInt(bodySplit[0]);
+                packets.add(outString + bodySplit[1]);
 
+                //cut packet from string
                 int cutLength = (bytes * 5);
-
                 inString = inString.substring(cutLength);
-                System.out.println(outString + body);
 
             } else {
                 int length = 0;
                 if (inString.charAt(0) == '0') {
-                    String test = Integer.parseInt(inString.substring(1, 16), 2) + "   " + inString.substring(1, 16);
+                    //parse length from bin as dec, substring based on result
                     length = Integer.parseInt(inString.substring(1, 16), 2);
                     String body = inString.substring(16,length+16);
 
-                    packets.add(outString + inString.charAt(0) + "," + length + "," + body);
+                    packets.add(outString + inString.charAt(0) + "," + length);
 
                     decode(packets,body,0);
 
@@ -94,14 +89,10 @@ public class Prob16 {
                     inString = inString.substring(cutLength);
 
                 } else {
-
-                    String test = inString.substring(1,12);
                     length = Integer.parseInt(inString.substring(1,12),2);
                     packets.add(outString + inString.charAt(0) + "," + length);
                     inString = decode(packets,inString.substring(12),length);
-
                 }
-
             }
         }
 

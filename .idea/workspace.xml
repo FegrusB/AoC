@@ -4,9 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="11/04/2023 most of a solve for 16.a. Issue with removing trailing 0s from main packets but not subpackets">
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="28/04/2023 still broken, but solving test inputs">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apiguardian_apiguardian_api_1_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_5_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_api_5_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_engine_5_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_jupiter_junit_jupiter_params_5_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_commons_1_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_junit_platform_junit_platform_engine_1_9_3.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_opentest4j_opentest4j_1_2_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/2021-16.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/aoc2021/Prob16Tests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/AoC2021.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/AoC2021.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/2021-16a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/2021-16a.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -14,6 +26,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportTestResults" exportFormat="Xml" outputFolder="$PROJECT_DIR$" userTempatePath="" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -40,31 +53,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/fergu/InteliJ/AoC2021&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Global Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;duplicates.index&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/fergu/InteliJ/AoC2021",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "duplicates.index",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Application.Prob16">
     <configuration name="Prob13" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="aoc2021.Prob13" />
@@ -82,9 +95,13 @@
     <configuration name="Prob16" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="aoc2021.Prob16" />
       <module name="AoC2021" />
-      <extension name="coverage">
+      <extension name="coverage" sample_coverage="false" track_test_folders="true">
         <pattern>
           <option name="PATTERN" value="aoc2021.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+        <pattern>
+          <option name="PATTERN" value="aoc2021.Prob16Tests" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -92,13 +109,67 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Prob16Tests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AoC2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aoc2021.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aoc2021" />
+      <option name="MAIN_CLASS_NAME" value="aoc2021.Prob16Tests" />
+      <option name="METHOD_NAME" value="" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Prob16Tests.prob16Test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AoC2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aoc2021.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aoc2021" />
+      <option name="MAIN_CLASS_NAME" value="aoc2021.Prob16Tests" />
+      <option name="METHOD_NAME" value="prob16Test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Prob16Tests.prob16TestInputs" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="AoC2021" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="aoc2021.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="aoc2021" />
+      <option name="MAIN_CLASS_NAME" value="aoc2021.Prob16Tests" />
+      <option name="METHOD_NAME" value="prob16TestInputs" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="Application.Prob13" />
       <item itemvalue="Application.Prob16" />
+      <item itemvalue="JUnit.Prob16Tests.prob16Test1" />
+      <item itemvalue="JUnit.Prob16Tests" />
+      <item itemvalue="JUnit.Prob16Tests.prob16TestInputs" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Prob16" />
+        <item itemvalue="JUnit.Prob16Tests" />
+        <item itemvalue="JUnit.Prob16Tests.prob16Test1" />
+        <item itemvalue="JUnit.Prob16Tests.prob16TestInputs" />
         <item itemvalue="Application.Prob13" />
       </list>
     </recent_temporary>
@@ -138,7 +209,7 @@
       <workItem from="1680596629952" duration="19356000" />
       <workItem from="1680684315707" duration="4951000" />
       <workItem from="1681213111369" duration="14702000" />
-      <workItem from="1682688020318" duration="2189000" />
+      <workItem from="1682688020318" duration="12521000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>
@@ -315,7 +386,14 @@
       <option name="project" value="LOCAL" />
       <updated>1680690195436</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="28/04/2023 still broken, but solving test inputs">
+      <created>1682690726240</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1682690726240</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -344,8 +422,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Switch to intelij" />
-    <MESSAGE value="26/11/2022 switch to intelij, fixed warnings etc, added project files" />
     <MESSAGE value="30/11/2022 finished quick sort. added fuel calc, solved for 7.1" />
     <MESSAGE value="solved for 7.2 with iterative fuel calc" />
     <MESSAGE value="solved for 7.2 with triangle number fuel calc" />
@@ -369,7 +445,9 @@
     <MESSAGE value="04/04/2023 unoptimized search for part 15 a" />
     <MESSAGE value="05/04/2023 djkstra solve for 15 part a" />
     <MESSAGE value="05/04/2023 added global constants for board size, and function to expand board for part 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="05/04/2023 added global constants for board size, and function to expand board for part 2" />
+    <MESSAGE value="11/04/2023 still broken, but solving test inputs" />
+    <MESSAGE value="28/04/2023 still broken, but solving test inputs" />
+    <option name="LAST_COMMIT_MESSAGE" value="28/04/2023 still broken, but solving test inputs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -401,6 +479,10 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AoC2021$Prob9.ic" NAME="Prob9 Coverage Results" MODIFIED="1670347739553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>aoc2021.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/AoC2021$Prob16.ic" NAME="Prob16 Coverage Results" MODIFIED="1682705528378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+      <FILTER>aoc2021.*</FILTER>
+      <FILTER>aoc2021.Prob16Tests</FILTER>
     </SUITE>
   </component>
 </project>

@@ -64,7 +64,7 @@ public class Prob16 {
                     }
                     calcStack.add(x);
                 }
-                //type 2: minimuim
+                //type 2: minimum
                 case "010" -> {
                     ArrayList<Long> checks = new ArrayList<>();
                     while (i > 0) {
@@ -131,13 +131,11 @@ public class Prob16 {
     public static String decode(ArrayList<String> packets, String inString,int numLoops){
 
         boolean boundLoop = false;
-        int x = 0;
         int i = 0;
 
         while ( !(inString.length() < 11 )&& !boundLoop) {
-            i++;
-            if (numLoops != 0){ boundLoop = x < numLoops - 1; }
 
+            i++;
             //decode and remove version + id
             String packetVersion = inString.substring(0, 3);
             String packetTypeID = inString.substring(3, 6);
@@ -172,7 +170,8 @@ public class Prob16 {
                     int y = packets.size() - 1;
                     while(!set) {
                         String s = packets.get(y);
-                        if(s.charAt(s.length() - 1 ) == ','){packets.set(y, s + length); set = true; }
+                        if(s.charAt(s.length() - 1 ) == ','){
+                            packets.set(y, s + length); set = true; }
                         y--;
                     }
 
@@ -182,6 +181,7 @@ public class Prob16 {
                     inString = decode(packets,inString.substring(12),length);
                 }
             }
+            if ( ! (i < numLoops) && numLoops != 0){boundLoop = true;}
         }
 
         if(numLoops == 0){

@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="28/04/2023 most of a solve for part 2 working on issue with type ID 0 subpacket count">
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="29/04/2023 gives incorrect answer but runs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/2021-16a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/2021-16a.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/aoc2021/Prob16Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aoc2021/Prob16Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +52,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;ToolWindowCoverage.ShowToolbar&quot;: &quot;false&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/fergu/InteliJ/AoC2021&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -198,7 +200,9 @@
       <workItem from="1680684315707" duration="4951000" />
       <workItem from="1681213111369" duration="14702000" />
       <workItem from="1682688020318" duration="12925000" />
-      <workItem from="1682775285910" duration="9799000" />
+      <workItem from="1682775285910" duration="10081000" />
+      <workItem from="1683016969630" duration="5074000" />
+      <workItem from="1683103232448" duration="610000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>
@@ -396,7 +400,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682784113214</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="29/04/2023 gives incorrect answer but runs">
+      <created>1682786817451</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1682786817451</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -425,7 +436,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="solved for 7.2 with triangle number fuel calc" />
     <MESSAGE value="comments and minor refactoring." />
     <MESSAGE value="01/12/2022 simple solve for 8.1" />
     <MESSAGE value="solved 8.2" />
@@ -450,7 +460,8 @@
     <MESSAGE value="28/04/2023 still broken, but solving test inputs" />
     <MESSAGE value="28/04/2023 Solve for part 1. Issue with literal packet length &gt; 9 solved" />
     <MESSAGE value="28/04/2023 most of a solve for part 2 working on issue with type ID 0 subpacket count" />
-    <option name="LAST_COMMIT_MESSAGE" value="28/04/2023 most of a solve for part 2 working on issue with type ID 0 subpacket count" />
+    <MESSAGE value="29/04/2023 gives incorrect answer but runs" />
+    <option name="LAST_COMMIT_MESSAGE" value="29/04/2023 gives incorrect answer but runs" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -475,16 +486,6 @@
           <properties class="java.util.EmptyStackException" package="java.util" />
           <option name="timeStamp" value="55" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java</url>
-          <line>107</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -501,7 +502,7 @@
     <SUITE FILE_PATH="coverage/AoC2021$Prob9.ic" NAME="Prob9 Coverage Results" MODIFIED="1670347739553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>aoc2021.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/AoC2021$Prob16.ic" NAME="Prob16 Coverage Results" MODIFIED="1682705528378" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/AoC2021$Prob16.ic" NAME="Prob16 Coverage Results" MODIFIED="1683040145976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
       <FILTER>aoc2021.*</FILTER>
       <FILTER>aoc2021.Prob16Tests</FILTER>
     </SUITE>

@@ -8,14 +8,11 @@ public class Prob16 {
 
         String inString = "";
 
-        if( args.length == 0 ) {
-            Scanner myScanner = GetScanner.get("2021-16.txt");
-            while (myScanner.hasNext()) {
-                inString = inString.concat(myScanner.nextLine());
-            }
-        } else {
-            inString = args[0];
+        Scanner myScanner = GetScanner.get("2021-16.txt");
+        while (myScanner.hasNext()) {
+            inString = inString.concat(myScanner.nextLine());
         }
+
 
         String binString = hexToBin(inString);
         ArrayList<String> packets = new ArrayList<>();
@@ -44,11 +41,10 @@ public class Prob16 {
             String[] currSplit = curr.split(",");
             if (!Objects.equals(currSplit[1], "100")){i = Integer.parseInt(currSplit[3]);};
             switch (currSplit[1]) {
-                //type 4: literal
-                case "100" -> {calcStack.add(Long.parseLong(currSplit[2], 2)); }
+
                 //type 0: sum
                 case "000" -> {
-                    Long x = 0L;
+                    long x = 0L;
                     while (i > 0) {
                         x += calcStack.pop();
                         i--;
@@ -57,7 +53,7 @@ public class Prob16 {
                 }
                 //type 1: product
                 case "001" -> {
-                    Long x = 1L;
+                    long x = 1L;
                     while (i > 0) {
                         x = x * calcStack.pop();
                         i--;
@@ -74,7 +70,7 @@ public class Prob16 {
                     checks.sort(null);
                     calcStack.add(checks.get(0));
                 }
-                //type 4: maximum
+                //type 3: maximum
                 case "011" -> {
                     ArrayList<Long> checks = new ArrayList<>();
                     while (i > 0) {
@@ -84,22 +80,26 @@ public class Prob16 {
                     checks.sort(null);
                     calcStack.add(checks.get(checks.size() - 1));
                 }
+                //type 4: literal
+                case "100" -> {
+                    calcStack.add(Long.parseLong(currSplit[2], 2));
+                }
                 //type 5: greater than
                 case "101" -> {
-                    Long x = calcStack.pop();
-                    Long y = calcStack.pop();
+                    long x = calcStack.pop();
+                    long y = calcStack.pop();
                     calcStack.add((x > y) ? 1L : 0L);
                 }
                 //type 6: less than
                 case "110" -> {
-                    Long x = calcStack.pop();
-                    Long y = calcStack.pop();
+                    long x = calcStack.pop();
+                    long y = calcStack.pop();
                     calcStack.add((x > y) ? 0L : 1L);
                 }
                 //type 6: equals
                 case "111" -> {
-                    Long x = calcStack.pop();
-                    Long y = calcStack.pop();
+                    long x = calcStack.pop();
+                    long y = calcStack.pop();
                     calcStack.add((x == y) ? 1L : 0L);
                 }
             }

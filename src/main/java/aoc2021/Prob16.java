@@ -8,7 +8,7 @@ public class Prob16 {
 
         String inString = "";
 
-        Scanner myScanner = GetScanner.get("2021-16a.txt");
+        Scanner myScanner = GetScanner.get("2021-16.txt");
         while (myScanner.hasNext()) {
             inString = inString.concat(myScanner.nextLine());
         }
@@ -39,7 +39,7 @@ public class Prob16 {
             String curr = packets.get(0);
             packets.remove(0);
             String[] currSplit = curr.split(",");
-            if (!Objects.equals(currSplit[1], "100")){i = Integer.parseInt(currSplit[3]);};
+            if (!Objects.equals(currSplit[1], "100")){i = Integer.parseInt(currSplit[3]);}
             switch (currSplit[1]) {
 
                 //type 0: sum
@@ -81,26 +81,27 @@ public class Prob16 {
                     calcStack.add(checks.get(checks.size() - 1));
                 }
                 //type 4: literal
-                case "100" -> {
-                    calcStack.add(Long.parseLong(currSplit[2], 2));
-                }
+                case "100" -> calcStack.add(Long.parseLong(currSplit[2], 2));
                 //type 5: greater than
                 case "101" -> {
                     long x = calcStack.pop();
                     long y = calcStack.pop();
-                    calcStack.add((x > y) ? 1L : 0L);
+                    if(x > y){calcStack.add(1L);}
+                    else{calcStack.add(0L);}
                 }
                 //type 6: less than
                 case "110" -> {
                     long x = calcStack.pop();
                     long y = calcStack.pop();
-                    calcStack.add((x > y) ? 0L : 1L);
+                    if(x >y ){calcStack.add(0L);}
+                    else{calcStack.add(1L);}
                 }
                 //type 7: equals
                 case "111" -> {
                     long x = calcStack.pop();
                     long y = calcStack.pop();
-                    calcStack.add((x == y) ? 1L : 0L);
+                    if(x == y){calcStack.add(1L);}
+                    else{calcStack.add(0L);}
                 }
             }
         }
@@ -144,7 +145,7 @@ public class Prob16 {
 
             if (packetTypeID.equals("100")) {
                 //decode literal and add to packets
-                String body = "";
+                String body;
                 body = decodeLiteral(inString);
                 String[] bodySplit = body.split(",");
                 int bytes = Integer.parseInt(bodySplit[0]);
@@ -155,7 +156,7 @@ public class Prob16 {
                 inString = inString.substring(cutLength);
 
             } else {
-                int length = 0;
+                int length;
                 if (inString.charAt(0) == '0') {
                     //parse length from bin as dec, substring based on result
                     length = Integer.parseInt(inString.substring(1, 16), 2);
@@ -196,26 +197,26 @@ public class Prob16 {
 
         for(int x = 0; x < inString.length();x++){
 
-            String appendString = "";
+            String appendString = switch (inString.charAt(x)) {
+                case ('0') -> "0000";
+                case ('1') -> "0001";
+                case ('2') -> "0010";
+                case ('3') -> "0011";
+                case ('4') -> "0100";
+                case ('5') -> "0101";
+                case ('6') -> "0110";
+                case ('7') -> "0111";
+                case ('8') -> "1000";
+                case ('9') -> "1001";
+                case ('A') -> "1010";
+                case ('B') -> "1011";
+                case ('C') -> "1100";
+                case ('D') -> "1101";
+                case ('E') -> "1110";
+                case ('F') -> "1111";
+                default -> "";
+            };
 
-            switch (inString.charAt(x)){
-                case ('0'): appendString = "0000";break;
-                case ('1'): appendString = "0001";break;
-                case ('2'): appendString = "0010";break;
-                case ('3'): appendString = "0011";break;
-                case ('4'): appendString = "0100";break;
-                case ('5'): appendString = "0101";break;
-                case ('6'): appendString = "0110";break;
-                case ('7'): appendString = "0111";break;
-                case ('8'): appendString = "1000";break;
-                case ('9'): appendString = "1001";break;
-                case ('A'): appendString = "1010";break;
-                case ('B'): appendString = "1011";break;
-                case ('C'): appendString = "1100";break;
-                case ('D'): appendString = "1101";break;
-                case ('E'): appendString = "1110";break;
-                case ('F'): appendString = "1111";break;
-            }
             outString = outString.concat(appendString);
         }
 

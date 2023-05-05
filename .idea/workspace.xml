@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="comments and cleaning for 11">
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/2021-16a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/2021-16a.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/aoc2021/Prob16Tests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/aoc2021/Prob16Tests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -413,7 +411,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682786817451</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="05/05/2023 added extra tests">
+      <created>1683283477679</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1683283477679</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -442,7 +447,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="comments and minor refactoring." />
     <MESSAGE value="01/12/2022 simple solve for 8.1" />
     <MESSAGE value="solved 8.2" />
     <MESSAGE value="comments and refactoring." />
@@ -467,7 +471,8 @@
     <MESSAGE value="28/04/2023 Solve for part 1. Issue with literal packet length &gt; 9 solved" />
     <MESSAGE value="28/04/2023 most of a solve for part 2 working on issue with type ID 0 subpacket count" />
     <MESSAGE value="29/04/2023 gives incorrect answer but runs" />
-    <option name="LAST_COMMIT_MESSAGE" value="29/04/2023 gives incorrect answer but runs" />
+    <MESSAGE value="05/05/2023 added extra tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="05/05/2023 added extra tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -496,6 +501,11 @@
           <properties class="java.lang.AssertionError" package="java.lang" />
           <option name="timeStamp" value="57" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="60" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -509,7 +519,7 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AoC2021$Prob16Tests.ic" NAME="Prob16Tests Coverage Results" MODIFIED="1683282232810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/AoC2021$Prob16Tests.ic" NAME="Prob16Tests Coverage Results" MODIFIED="1683284812513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>aoc2021.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/AoC2021$Prob16.ic" NAME="Prob16 Coverage Results" MODIFIED="1683282138445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">

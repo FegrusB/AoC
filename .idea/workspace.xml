@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +71,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="JUnit.Prob16Tests">
+  <component name="RunManager" selected="Application.Prob16">
     <configuration name="Prob13" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="aoc2021.Prob13" />
       <module name="AoC2021" />
@@ -160,8 +159,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.Prob16Tests" />
         <item itemvalue="Application.Prob16" />
+        <item itemvalue="JUnit.Prob16Tests" />
         <item itemvalue="JUnit.Prob16Tests.prob16Test1" />
         <item itemvalue="JUnit.Prob16Tests.prob16TestInputs" />
         <item itemvalue="Application.Prob13" />
@@ -418,7 +417,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683283477679</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="reformatting">
+      <created>1683286047472</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1683286047472</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +453,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="01/12/2022 simple solve for 8.1" />
     <MESSAGE value="solved 8.2" />
     <MESSAGE value="comments and refactoring." />
     <MESSAGE value="02/12/2022 added data and class for prob 9" />
@@ -472,7 +477,8 @@
     <MESSAGE value="28/04/2023 most of a solve for part 2 working on issue with type ID 0 subpacket count" />
     <MESSAGE value="29/04/2023 gives incorrect answer but runs" />
     <MESSAGE value="05/05/2023 added extra tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="05/05/2023 added extra tests" />
+    <MESSAGE value="reformatting" />
+    <option name="LAST_COMMIT_MESSAGE" value="reformatting" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -501,11 +507,6 @@
           <properties class="java.lang.AssertionError" package="java.lang" />
           <option name="timeStamp" value="57" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java</url>
-          <line>108</line>
-          <option name="timeStamp" value="60" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -519,7 +520,7 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AoC2021$Prob16Tests.ic" NAME="Prob16Tests Coverage Results" MODIFIED="1683284812513" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/AoC2021$Prob16Tests.ic" NAME="Prob16Tests Coverage Results" MODIFIED="1683285989114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>aoc2021.*</FILTER>
     </SUITE>
     <SUITE FILE_PATH="coverage/AoC2021$Prob16.ic" NAME="Prob16 Coverage Results" MODIFIED="1683282138445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">

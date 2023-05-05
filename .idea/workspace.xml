@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="29/04/2023 gives incorrect answer but runs">
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="comments and cleaning for 11">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/2021-16a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/2021-16a.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java" afterDir="false" />
@@ -28,10 +28,16 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="jar://$USER_HOME$/.jdks/openjdk-19.0.1/lib/src.zip!/java.base/java/lang/String.java" root0="SKIP_INSPECTION" />
-    <setting file="jar://$MAVEN_REPOSITORY$/commons-lang/commons-lang/2.5/commons-lang-2.5.jar!/org/apache/commons/lang/StringUtils.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
@@ -68,7 +74,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Prob16">
+  <component name="RunManager" selected="JUnit.Prob16Tests">
     <configuration name="Prob13" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="aoc2021.Prob13" />
       <module name="AoC2021" />
@@ -156,8 +162,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Prob16" />
         <item itemvalue="JUnit.Prob16Tests" />
+        <item itemvalue="Application.Prob16" />
         <item itemvalue="JUnit.Prob16Tests.prob16Test1" />
         <item itemvalue="JUnit.Prob16Tests.prob16TestInputs" />
         <item itemvalue="Application.Prob13" />
@@ -486,6 +492,10 @@
           <properties class="java.util.EmptyStackException" package="java.util" />
           <option name="timeStamp" value="55" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.AssertionError" package="java.lang" />
+          <option name="timeStamp" value="57" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
@@ -499,12 +509,15 @@
     <select />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/AoC2021$Prob9.ic" NAME="Prob9 Coverage Results" MODIFIED="1670347739553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+    <SUITE FILE_PATH="coverage/AoC2021$Prob16Tests.ic" NAME="Prob16Tests Coverage Results" MODIFIED="1683282232810" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>aoc2021.*</FILTER>
     </SUITE>
-    <SUITE FILE_PATH="coverage/AoC2021$Prob16.ic" NAME="Prob16 Coverage Results" MODIFIED="1683040145976" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
+    <SUITE FILE_PATH="coverage/AoC2021$Prob16.ic" NAME="Prob16 Coverage Results" MODIFIED="1683282138445" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="true">
       <FILTER>aoc2021.*</FILTER>
       <FILTER>aoc2021.Prob16Tests</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/AoC2021$Prob9.ic" NAME="Prob9 Coverage Results" MODIFIED="1670347739553" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>aoc2021.*</FILTER>
     </SUITE>
   </component>
 </project>

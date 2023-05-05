@@ -8,7 +8,7 @@ public class Prob16 {
 
         String inString = "";
 
-        Scanner myScanner = GetScanner.get("2021-16.txt");
+        Scanner myScanner = GetScanner.get("2021-16a.txt");
         while (myScanner.hasNext()) {
             inString = inString.concat(myScanner.nextLine());
         }
@@ -96,7 +96,7 @@ public class Prob16 {
                     long y = calcStack.pop();
                     calcStack.add((x > y) ? 0L : 1L);
                 }
-                //type 6: equals
+                //type 7: equals
                 case "111" -> {
                     long x = calcStack.pop();
                     long y = calcStack.pop();

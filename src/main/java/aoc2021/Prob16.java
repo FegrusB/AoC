@@ -49,7 +49,7 @@ public class Prob16 {
                         x += calcStack.pop();
                         i--;
                     }
-                    calcStack.add(x);
+                    calcStack.push(x);
                 }
                 //type 1: product
                 case "001" -> {
@@ -58,7 +58,7 @@ public class Prob16 {
                         x = x * calcStack.pop();
                         i--;
                     }
-                    calcStack.add(x);
+                    calcStack.push(x);
                 }
                 //type 2: minimum
                 case "010" -> {
@@ -68,7 +68,7 @@ public class Prob16 {
                         i--;
                     }
                     checks.sort(null);
-                    calcStack.add(checks.get(0));
+                    calcStack.push(checks.get(0));
                 }
                 //type 3: maximum
                 case "011" -> {
@@ -77,8 +77,8 @@ public class Prob16 {
                         checks.add(calcStack.pop());
                         i--;
                     }
-                    checks.sort(null);
-                    calcStack.add(checks.get(checks.size() - 1));
+                    checks.sort(Collections.reverseOrder());
+                    calcStack.push(checks.get(0));
                 }
                 //type 4: literal
                 case "100" -> calcStack.add(Long.parseLong(currSplit[2], 2));
@@ -86,22 +86,19 @@ public class Prob16 {
                 case "101" -> {
                     long x = calcStack.pop();
                     long y = calcStack.pop();
-                    if(x > y){calcStack.add(1L);}
-                    else{calcStack.add(0L);}
+                    calcStack.push((x > y)? 1L:0L);
                 }
                 //type 6: less than
                 case "110" -> {
                     long x = calcStack.pop();
                     long y = calcStack.pop();
-                    if(x >y ){calcStack.add(0L);}
-                    else{calcStack.add(1L);}
+                    calcStack.push((x < y)? 1L:0L);
                 }
                 //type 7: equals
                 case "111" -> {
                     long x = calcStack.pop();
                     long y = calcStack.pop();
-                    if(x == y){calcStack.add(1L);}
-                    else{calcStack.add(0L);}
+                    calcStack.push((x == y)? 1L:0L);
                 }
             }
         }

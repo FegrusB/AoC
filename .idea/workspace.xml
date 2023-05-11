@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/data/2021-17.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data/2021-17a.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob17.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob16.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +75,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Application.Prob16">
+  <component name="RunManager">
     <configuration name="Prob13" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="aoc2021.Prob13" />
       <module name="AoC2021" />
@@ -208,6 +210,7 @@
       <workItem from="1682775285910" duration="10081000" />
       <workItem from="1683016969630" duration="5074000" />
       <workItem from="1683103232448" duration="610000" />
+      <workItem from="1683799485912" duration="9863000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>

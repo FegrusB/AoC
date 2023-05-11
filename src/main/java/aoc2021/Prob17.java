@@ -1,5 +1,6 @@
 package aoc2021;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -13,8 +14,7 @@ public class Prob17 {
         int[] xBounds = boundsOut[0];
         int[] yBounds = boundsOut[1];
 
-        int maxY = mainLoop(xBounds,yBounds);
-        System.out.println(maxY);
+        mainLoop(xBounds,yBounds);
 
     }
 
@@ -41,7 +41,7 @@ public class Prob17 {
         int maxY = 0;
         boolean targetZone = false;
 
-        while (currX < xBounds[1] && currY > yBounds[1]){
+        while (currX <= xBounds[1] && currY >= yBounds[0]){
             boolean targetX = false;
             boolean targetY = false;
             
@@ -58,26 +58,33 @@ public class Prob17 {
 
         }
 
-        return (targetZone)? maxY : 0;
+        return (targetZone)? maxY : -1;
     }
 
-    public static int mainLoop(int[] xBounds, int[] yBounds){
+    public static void mainLoop(int[] xBounds, int[] yBounds){
 
+        ArrayList<Integer[]> winningVelocities = new ArrayList<>();
         int maxY = 0;
 
-        for(int initialXVelocity = 1; initialXVelocity < xBounds[1]; initialXVelocity++ ){
+        for(int initialXVelocity = 1; initialXVelocity < xBounds[1] + 1; initialXVelocity++ ){
 
-            for(int initialYVelocity = 1; initialYVelocity < xBounds[1] + 1; initialYVelocity++ ){
+            for(int initialYVelocity = yBounds[0]; initialYVelocity < xBounds[1] + 1; initialYVelocity++ ){
 
                 int newY = probeLoop(new int[] {initialXVelocity,initialYVelocity},xBounds,yBounds);
-                if(newY == 45){
-                    System.out.println();
-                }
                 if(newY > maxY){maxY = newY;}
+                if(newY != -1){winningVelocities.add(new Integer[] {initialXVelocity,initialYVelocity});}
 
             }
         }
-        return maxY;
+        System.out.println("Max y reached: " + maxY);
+        /*for(Integer[] pair: winningVelocities ){
+            if(pair[0] == 30){
+                System.out.println();
+            }
+        }*/
+
+        System.out.println("Number of winning initial velocities: " + winningVelocities.size());
+
     }
 
 

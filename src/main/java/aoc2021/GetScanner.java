@@ -15,7 +15,7 @@ class GetScanner {
 		String mainAdd = new File("").getAbsolutePath();
 		
 		//create file object with correct address and initialise myScanner
-		File myFile = new File(mainAdd + data + fileName);
+		File myFile = new File(mainAdd + data + fileName + ".txt");
 		Scanner myScanner = null;
 		
 		//try to create scanner of file at myFile, throw exception if no file

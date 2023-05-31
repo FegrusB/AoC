@@ -9,28 +9,31 @@ public class Prob18 {
 
     public static void main(String[] args){
         Scanner myScanner = GetScanner.get("2021-18a");
-        ArrayList<String> stringArray = new ArrayList<>();
-ArrayList<ArrayList<Integer>>
+        ArrayList<ArrayList<Character>> characterArrayArray = new ArrayList<>();
 
         while (myScanner.hasNextLine()){
-            stringArray.add(myScanner.nextLine());
+            String currString = myScanner.nextLine();
+            ArrayList<Character> charArr = currString.chars().mapToObj(c -> (char) c).collect(Collectors.toCollection(ArrayList::new));
+            characterArrayArray.add(charArr);
         }
 
-
-
-
-        calculate(numbersArray);
+        calculate(characterArrayArray);
     }
 
-    public static void calculate(ArrayList<String > numberArray){
+    public static void calculate(ArrayList<ArrayList<Character>> numberArray){
 
         int i = 1;
         while( numberArray.size() > 1){
 
-            String lastString = numberArray.get(i-1);
-            String currString = numberArray.get(i);
+            ArrayList<Character> lastString = numberArray.get(i-1);
+            ArrayList<Character> currString = numberArray.get(i);
 
-            String addedString = "[" + lastString + "," + currString + "]";
+            ArrayList<Character> addedString = new ArrayList<>();
+            addedString.add('[');
+            addedString.addAll(lastString);
+            addedString.add(',');
+            addedString.addAll(currString);
+            addedString.add(']');
 
             int stringPos = 0;
             boolean done = false;
@@ -38,15 +41,15 @@ ArrayList<ArrayList<Integer>>
 
             while(!done){
 
-                char pos = addedString.charAt(stringPos);
+                char pos = addedString.get(stringPos);
 
                 if(squareCount > 3){
-                    addedString = explode(currString,i);
+                    explode(addedString,i);
                 }
 
 
 
-                if (stringPos >= addedString.length()){done = true;}
+                if (stringPos >= addedString.size()){done = true;}
                 else {stringPos++;}
             }
 
@@ -55,25 +58,24 @@ ArrayList<ArrayList<Integer>>
         }
 
     }
-    public static String explode(String currString, int pos){
+    public static void explode(ArrayList<Character> currString, int pos){
 
-        int x = Character.getNumericValue(currString.charAt(pos));
-        int y = Character.getNumericValue(currString.charAt(pos+2));
+        int x = Character.getNumericValue(currString.get(pos));
+        int y = Character.getNumericValue(currString.get(pos+2));
 
         int[] xChanges = explodeSearch(-1, currString,pos,x);
         int[] yChanges = explodeSearch(1, currString,pos,y);
 
-        currString = explodeChange(currString, pos, xChanges);
-        if(xChanges[1] != 0){ currString = explodeChange(currString,xChanges[1],-1);}
+        explodeChange(currString, pos, xChanges);
+        //if(xChanges[1] != 0){ currString = explodeChange(currString,xChanges[1],-1);}
 
-        currString = explodeChange(currString, pos+2,yChanges[0]);
-        if(yChanges[1] != 0) {currString = explodeChange(currString, yChanges[1],-1);}
+        //currString = explodeChange(currString, pos+2,yChanges[0]);
+        //if(yChanges[1] != 0) {currString = explodeChange(currString, yChanges[1],-1);}
 
-        return currString;
     }
 
 
-    public static int[] explodeSearch(int leftRight, String currString, int pos,int num) {
+    public static int[] explodeSearch(int leftRight, ArrayList<Character> currString, int pos,int num) {
 
         //leftRight == -1 search to left. leftRight == 1 search to right
         int i = pos + leftRight;
@@ -81,9 +83,9 @@ ArrayList<ArrayList<Integer>>
         int foundNumberPos = 0;
         
         
-        while(i > 0 && i < currString.length() && !foundNumber){
-            if (currString.charAt(i) != '[' || currString.charAt(i) != ']'){
-                num += Character.getNumericValue(currString.charAt(i));
+        while(i > 0 && i < currString.size() && !foundNumber){
+            if (!(currString.get(i) == '[' || currString.get(i) == ']' || currString.get(i) == ',')){
+                num += Character.getNumericValue(currString.get(i));
                 foundNumberPos = i;
                 foundNumber = true;
             }
@@ -94,25 +96,23 @@ ArrayList<ArrayList<Integer>>
 
         return new int[] {num,foundNumberPos};
     }
-    public static String explodeChange(String currString, int posChange, int[] changeInfo){
+    public static String explodeChange(ArrayList<Character> currString, int posChange, int[] changeInfo){
 
         int valChange = changeInfo[0];
         int foundNumberPos = changeInfo[1];
 
-        ArrayList<Character> charArr = new ArrayList<>(currString.chars().mapToObj(c -> (char) c).collect(Collectors.toList()));
-
-        charArr.set(posChange,Character.)
+        currString.set(posChange,(char) valChange);
 
 
         if(valChange == -1){
-            charArr.remove(posChange);
-            charArr.remove(explodeFindBracket(currString,posChange,leftRight));
+            currString.remove(posChange);
+            //charArr.remove(explodeFindBracket(currString,posChange,leftRight));
         }else {
 
 
 
         }
-
+        return null;
     }
 
     public static int explodeFindBracket(String currString, int pos, int leftRight){

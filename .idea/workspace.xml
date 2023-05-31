@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="11/05/2023 Brute force approach to prob17 part one">
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="31/05/2023 commit before restarting prob 18">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob18.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob18.java" afterDir="false" />
     </list>
@@ -437,7 +437,14 @@
       <option name="project" value="LOCAL" />
       <updated>1683817820490</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="31/05/2023 commit before restarting prob 18">
+      <created>1685529169124</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1685529169124</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -466,7 +473,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="comments and refactoring." />
     <MESSAGE value="02/12/2022 added data and class for prob 9" />
     <MESSAGE value="solved for 9.1" />
     <MESSAGE value="started solve for 9.2" />
@@ -491,7 +497,8 @@
     <MESSAGE value="05/05/2023 added extra tests" />
     <MESSAGE value="reformatting" />
     <MESSAGE value="11/05/2023 Brute force approach to prob17 part one" />
-    <option name="LAST_COMMIT_MESSAGE" value="11/05/2023 Brute force approach to prob17 part one" />
+    <MESSAGE value="31/05/2023 commit before restarting prob 18" />
+    <option name="LAST_COMMIT_MESSAGE" value="31/05/2023 commit before restarting prob 18" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

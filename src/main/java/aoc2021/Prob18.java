@@ -7,127 +7,90 @@ import java.util.stream.Collectors;
 
 public class Prob18 {
 
-    public static void main(String[] args){
+    public static void main(String[] args) {
         Scanner myScanner = GetScanner.get("2021-18a");
-        ArrayList<ArrayList<Character>> characterArrayArray = new ArrayList<>();
+        ArrayList<ArrayList<Character>> numbersArray = new ArrayList<>();
 
-        while (myScanner.hasNextLine()){
+        while (myScanner.hasNextLine()) {
             String currString = myScanner.nextLine();
-            ArrayList<Character> charArr = currString.chars().mapToObj(c -> (char) c).collect(Collectors.toCollection(ArrayList::new));
-            characterArrayArray.add(charArr);
+            ArrayList<Character> number = currString.chars().mapToObj(c -> (char) c).collect(Collectors.toCollection(ArrayList::new));
+            numbersArray.add(number);
         }
 
-        calculate(characterArrayArray);
+        calculate(numbersArray);
     }
 
-    public static void calculate(ArrayList<ArrayList<Character>> numberArray){
+    public static void calculate(ArrayList<ArrayList<Character>> numberArray) {
 
         int i = 1;
-        while( numberArray.size() > 1){
+        while (numberArray.size() > 1) {
 
-            ArrayList<Character> lastString = numberArray.get(i-1);
-            ArrayList<Character> currString = numberArray.get(i);
+            ArrayList<Character> lastNumber = numberArray.get(i - 1);
+            ArrayList<Character> currNumber = numberArray.get(i);
 
-            ArrayList<Character> addedString = new ArrayList<>();
-            addedString.add('[');
-            addedString.addAll(lastString);
-            addedString.add(',');
-            addedString.addAll(currString);
-            addedString.add(']');
+            ArrayList<Character> addedNumber = new ArrayList<>();
+            addedNumber.add('[');
+            addedNumber.addAll(lastNumber);
+            addedNumber.add(',');
+            addedNumber.addAll(currNumber);
+            addedNumber.add(']');
 
-            int stringPos = 0;
-            boolean done = false;
-            int squareCount = 0;
+            reduce(addedNumber);
 
-            while(!done){
+            numberArray.remove(0);
+            numberArray.set(0,addedNumber);
 
-                char pos = addedString.get(stringPos);
+        }
+    }
+    public static void reduce(ArrayList<Character> number){
 
-                if(squareCount > 3){
-                    explode(addedString,i);
+        int squareCount = 0;
+        int pos = 0;
+
+        while (pos < number.size()) {
+
+            char currChar = number.get(pos);
+            pos++;
+
+            if (squareCount > 4) {
+                explode(number,pos);
+                pos = 0;
+            }else if (Character.isDigit(currChar) && Character.isDigit(number.get(pos))){
+                //split
+                pos = 0;
+            } else if (currChar == '['){
+                squareCount++;
+            } else if(currChar == ']'){
+                squareCount--;
+            }
+        }
+    }
+    public static void explode(ArrayList<Character> number, int pos){
+
+        char leftChar = number.get(pos);
+        char rightChar = number.get(pos + 2);
+
+        boolean changed = false;
+        while (!changed){
+
+            int leftPos = pos;
+
+            while(leftPos < 0){
+                if(Character.isDigit(number.get(leftPos))){
+                    int leftNum = Character.getNumericValue(number.get(leftPos));
+                    leftNum += Character.getNumericValue(rightChar);
+                    if
                 }
+                leftPos--;
 
-
-
-                if (stringPos >= addedString.size()){done = true;}
-                else {stringPos++;}
             }
 
 
 
         }
 
-    }
-    public static void explode(ArrayList<Character> currString, int pos){
-
-        int x = Character.getNumericValue(currString.get(pos));
-        int y = Character.getNumericValue(currString.get(pos+2));
-
-        int[] xChanges = explodeSearch(-1, currString,pos,x);
-        int[] yChanges = explodeSearch(1, currString,pos,y);
-
-        explodeChange(currString, pos, xChanges);
-        //if(xChanges[1] != 0){ currString = explodeChange(currString,xChanges[1],-1);}
-
-        //currString = explodeChange(currString, pos+2,yChanges[0]);
-        //if(yChanges[1] != 0) {currString = explodeChange(currString, yChanges[1],-1);}
 
     }
-
-
-    public static int[] explodeSearch(int leftRight, ArrayList<Character> currString, int pos,int num) {
-
-        //leftRight == -1 search to left. leftRight == 1 search to right
-        int i = pos + leftRight;
-        boolean foundNumber = false;
-        int foundNumberPos = 0;
-        
-        
-        while(i > 0 && i < currString.size() && !foundNumber){
-            if (!(currString.get(i) == '[' || currString.get(i) == ']' || currString.get(i) == ',')){
-                num += Character.getNumericValue(currString.get(i));
-                foundNumberPos = i;
-                foundNumber = true;
-            }
-            i += leftRight;
-        }
-
-        if(!foundNumber){num = 0;}
-
-        return new int[] {num,foundNumberPos};
-    }
-    public static String explodeChange(ArrayList<Character> currString, int posChange, int[] changeInfo){
-
-        int valChange = changeInfo[0];
-        int foundNumberPos = changeInfo[1];
-
-        currString.set(posChange,(char) valChange);
-
-
-        if(valChange == -1){
-            currString.remove(posChange);
-            //charArr.remove(explodeFindBracket(currString,posChange,leftRight));
-        }else {
-
-
-
-        }
-        return null;
-    }
-
-    public static int explodeFindBracket(String currString, int pos, int leftRight){
-
-        char searchChar = (leftRight == -1)? '[':']';
-
-        int i = 0;
-        while(currString.charAt(pos + i) != searchChar){
-            i += leftRight;
-        }
-
-        return pos + i;
-
-    }
-
 }
 
 

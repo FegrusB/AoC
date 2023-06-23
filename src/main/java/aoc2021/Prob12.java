@@ -1,9 +1,9 @@
 package aoc2021;
 
-import org.apache.commons.lang.StringUtils;
+
+import org.apache.commons.lang3.StringUtils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Scanner;
 
 public class Prob12 {
@@ -48,7 +48,7 @@ public class Prob12 {
             for (String connection : connections) {
 
                 if (connection.equals("start")){continue;}
-                if (!pathSoFar.contains(connection)||StringUtils.isAllUpperCase(connection)) {
+                if (!pathSoFar.contains(connection)|| StringUtils.isAllUpperCase(connection)) {
                     getPaths(pathSoFar + connection + " ", caves.get(caves.indexOf(new Cave(connection))),pathList,singleSmall);
                 }else if(pathSoFar.contains(connection)&& !singleSmall){
                     getPaths(pathSoFar + connection + " ", caves.get(caves.indexOf(new Cave(connection))),pathList,true);

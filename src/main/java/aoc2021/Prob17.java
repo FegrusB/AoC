@@ -9,7 +9,7 @@ public class Prob17 {
 
     public static void main(String[] args){
 
-        Scanner myScanner = GetScanner.get("2021-17.txt");
+        Scanner myScanner = GetScanner.get("2021-17");
         int[][] boundsOut  = setUpBounds(myScanner.nextLine());
         int[] xBounds = boundsOut[0];
         int[] yBounds = boundsOut[1];

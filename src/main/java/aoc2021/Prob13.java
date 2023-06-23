@@ -10,7 +10,7 @@ public class Prob13 {
 
     public static void main(String[] args){
 
-        Scanner myScanner = GetScanner.get("2021-13.txt");
+        Scanner myScanner = GetScanner.get("2021-13");
         boolean[][] paper = new boolean[894][1311];
         ArrayList<String> folds = new ArrayList<>();
 

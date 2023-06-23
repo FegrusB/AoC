@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="31/05/2023 commit before restarting prob 18">
-      <change afterPath="$PROJECT_DIR$/data/2021-18.txt" afterDir="false" />
+    <list default="true" id="4083eac5-b4cc-41be-87fa-96e99d743b5b" name="Changes" comment="23/06/2023 Solve for prob 18 part a">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/2021-18a.txt" beforeDir="false" afterPath="$PROJECT_DIR$/data/2021-18a.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob12.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob13.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob17.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/aoc2021/Prob18.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/aoc2021/Prob18.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -127,7 +121,7 @@
       <workItem from="1687348805787" duration="4102000" />
       <workItem from="1687441367439" duration="922000" />
       <workItem from="1687443910709" duration="5963000" />
-      <workItem from="1687516822952" duration="8921000" />
+      <workItem from="1687516822952" duration="10020000" />
     </task>
     <task id="LOCAL-00001" summary="Switch to intelij">
       <created>1669468851066</created>
@@ -360,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1685529169124</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="23/06/2023 Solve for prob 18 part a">
+      <option name="closed" value="true" />
+      <created>1687531987447</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1687531987447</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -389,7 +391,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="02/12/2022 added data and class for prob 9" />
     <MESSAGE value="solved for 9.1" />
     <MESSAGE value="started solve for 9.2" />
     <MESSAGE value="06/12/2022 added recursive solve for 9.2" />
@@ -414,7 +415,8 @@
     <MESSAGE value="reformatting" />
     <MESSAGE value="11/05/2023 Brute force approach to prob17 part one" />
     <MESSAGE value="31/05/2023 commit before restarting prob 18" />
-    <option name="LAST_COMMIT_MESSAGE" value="31/05/2023 commit before restarting prob 18" />
+    <MESSAGE value="23/06/2023 Solve for prob 18 part a" />
+    <option name="LAST_COMMIT_MESSAGE" value="23/06/2023 Solve for prob 18 part a" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -447,6 +449,11 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="69" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/aoc2021/Prob18.java</url>
+          <line>47</line>
+          <option name="timeStamp" value="90" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

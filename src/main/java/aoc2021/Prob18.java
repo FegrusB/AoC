@@ -4,7 +4,6 @@ import org.apache.commons.lang3.math.NumberUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Prob18 {
@@ -18,12 +17,35 @@ public class Prob18 {
             numbersArray.add( new ArrayList<>(List.of(currString.split(""))));
         }
 
+        System.out.println(partTwo(numbersArray));
+
         calculate(numbersArray);
         System.out.println(rebuild(numbersArray.get(0)));
 
         ArrayList<String> number = numbersArray.get(0);
         magnitude(number);
         System.out.println(number.get(0));
+
+
+    }
+
+    public static Double partTwo(ArrayList<ArrayList<String>> numbers){
+        ArrayList<Double> mags = new ArrayList<>();
+
+        for(ArrayList<String> number: numbers){
+            for (ArrayList<String> pair: numbers){
+                if (number.equals(pair)){continue;}
+                ArrayList<ArrayList<String>> calcedNum = new ArrayList<>();
+                calcedNum.add(number);
+                calcedNum.add(pair);
+                calculate(calcedNum);
+                magnitude(calcedNum.get(0));
+                mags.add(Double.valueOf(calcedNum.get(0).get(0)));
+            }
+        }
+
+        mags.sort(null);
+        return mags.get(mags.size()-1);
     }
 
     public static String rebuild(ArrayList<String> number){

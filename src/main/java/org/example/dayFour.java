@@ -39,25 +39,17 @@ public class dayFour {
 
         int x = 0;
         for (ArrayList<Integer> pair:pairs){
-            boolean overlap = false;
-            ArrayList<HashSet<Integer>> ranges = new ArrayList<>();
-            HashSet<Integer> set = new HashSet<>();
-            for(int z = pair.get(0) -1; z < pair.get(1); z++){
-                set.add(z);
-            }
-            ranges.add(set);
-            set = new HashSet<>();
-            for(int z = pair.get(2) -1; z < pair.get(3); z++){
-                if (ranges.get(0).contains(z)){overlap = true;}
-                set.add(z);
-            }
-            ranges.add(set);
-            for(int z = pair.get(0) -1; z < pair.get(1); z++){
-                if (ranges.get(1).contains(z)){overlap = true;};
-            }
-            if (overlap){x++;}
+            boolean overlap1 = checkSet(pair.get(0),pair.get(1),pair.get(2),pair.get(3));
+            boolean overlap2 = checkSet(pair.get(2),pair.get(3),pair.get(0),pair.get(1));
+            if (overlap1 || overlap2){x++;}
         }
         System.out.println("There are: " + x + " pairs that overlap at all.");
     }
-
+    public static boolean checkSet(int bound1, int bound2,int check1, int check2){
+        HashSet<Integer> set = new HashSet<>();
+        boolean contained = false;
+        for(int i = bound1 -1; i < bound2; i++){set.add(i);}
+        for (int i = check1 - 1; i < check2; i++){if(set.contains(i)){contained = true;}}
+        return contained;
+    }
 }

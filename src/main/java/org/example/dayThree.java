@@ -42,8 +42,6 @@ public class dayThree {
         String alph = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
         ArrayList<Character> badges = new ArrayList<>();
 
-
-
         for (ArrayList<String> group: groups){
             ArrayList<HashSet<Character>> sets = new ArrayList<>();
             int[] count = new int[52];

@@ -6,7 +6,6 @@ import java.util.Scanner;
 
 
 class GetScanner {
-
 	public static Scanner get(String fileName) {
 
 		InputStream stream = GetScanner.class.getClassLoader().getResourceAsStream("PuzzleText\\" + fileName + ".txt");

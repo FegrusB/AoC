@@ -44,10 +44,7 @@ public class daySeven {
         long spaceNeeded = 30000000 - (70000000 - directories.get(0).getTotalSize());
         ArrayList<Long> deleteList = new ArrayList<>();
 
-
-        for(Directory dir: directories){
-            if (dir.getTotalSize() >= spaceNeeded){deleteList.add(dir.getTotalSize());}
-        }
+        for(Directory dir: directories){if (dir.getTotalSize() >= spaceNeeded){deleteList.add(dir.getTotalSize());}}
 
         deleteList.sort(null);
         return deleteList.get(0);

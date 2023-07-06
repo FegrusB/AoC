@@ -31,20 +31,36 @@ public class daySeven {
                 workingDir.addDir(newDir);
                 directories.add(newDir);
             }else {
-                directories.get(directories.indexOf(workingDir)).addFile(new FileDay7(Long.parseLong(splitLine.get(0)),splitLine.get(1)));
+                workingDir.addFile(new FileDay7(Long.parseLong(splitLine.get(0)),splitLine.get(1)));
             }
         }
-
         directories.get(0).getTotalSize();
+        System.out.println(partOne(directories));
+        System.out.println(partTwo(directories));
+
+    }
+    public static long partTwo(ArrayList<Directory> directories){
+
+        long spaceNeeded = 30000000 - (70000000 - directories.get(0).getTotalSize());
+        ArrayList<Long> deleteList = new ArrayList<>();
+
+
+        for(Directory dir: directories){
+            if (dir.getTotalSize() >= spaceNeeded){deleteList.add(dir.getTotalSize());}
+        }
+
+        deleteList.sort(null);
+        return deleteList.get(0);
+    }
+    public static long partOne(ArrayList<Directory> directories){
+
         long sum = 0;
         for (Directory dir: directories){
-            if (dir.totalSize < 100000){
+            if (dir.totalSize < 100000L){
                 sum += dir.totalSize;
             }
         }
-
-        System.out.println(sum);
-
+        return sum;
     }
 
 }
@@ -54,9 +70,7 @@ class Directory{
     ArrayList<Directory> subDirectories;
     ArrayList<FileDay7> files;
     String name;
-
     Directory parent;
-
     long totalSize;
 
 
@@ -80,8 +94,14 @@ class Directory{
     }
 
     public long getTotalSize(){
-        for (Directory dir: subDirectories){totalSize += dir.getTotalSize();}
-        for (FileDay7 file: files) {totalSize += file.size;}
+        if(totalSize == 0) {
+            for (Directory dir : subDirectories) {
+                totalSize += dir.getTotalSize();
+            }
+            for (FileDay7 file : files) {
+                totalSize += file.size;
+            }
+        }
         return totalSize;
     }
 

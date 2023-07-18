@@ -13,4 +13,11 @@ class GetScanner {
 		return new Scanner(stream);
 
 	}
+	public static InputStream getStream(String fileName) {
+
+		InputStream stream = GetScanner.class.getClassLoader().getResourceAsStream("PuzzleText\\" + fileName + ".txt");
+		assert stream != null;
+		return stream;
+
+	}
 }

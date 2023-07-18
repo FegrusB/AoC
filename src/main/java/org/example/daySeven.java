@@ -1,11 +1,8 @@
 package org.example;
 
-import java.io.File;
 import java.util.*;
 
 public class daySeven {
-
-
     public static void main(String[] args) {
 
         Scanner myScanner = GetScanner.get("Day-7");
@@ -31,7 +28,7 @@ public class daySeven {
                 workingDir.addDir(newDir);
                 directories.add(newDir);
             }else {
-                workingDir.addFile(new FileDay7(Long.parseLong(splitLine.get(0)),splitLine.get(1)));
+                workingDir.addFile(new File(Long.parseLong(splitLine.get(0)),splitLine.get(1)));
             }
         }
         directories.get(0).getTotalSize();
@@ -59,78 +56,78 @@ public class daySeven {
         }
         return sum;
     }
+    static class Directory{
 
-}
-
-class Directory{
-
-    ArrayList<Directory> subDirectories;
-    ArrayList<FileDay7> files;
-    String name;
-    Directory parent;
-    long totalSize;
+        ArrayList<Directory> subDirectories;
+        ArrayList<File> files;
+        String name;
+        Directory parent;
+        long totalSize;
 
 
 
-    public Directory(String name){this.name = name;}
-    public Directory(String name,Directory parent) {
-        this.name = name;
-        subDirectories = new ArrayList<>();
-        files = new ArrayList<>();
-        this.parent = parent;
-        totalSize = 0;
-    }
-
-    @Override
-    public boolean equals(Object o){
-        if(o.getClass() != Directory.class){return false;}
-        else{
-            Directory dirO = (Directory) o;
-            return dirO.getName().equals(this.getName());
+        public Directory(String name){this.name = name;}
+        public Directory(String name, Directory parent) {
+            this.name = name;
+            subDirectories = new ArrayList<>();
+            files = new ArrayList<>();
+            this.parent = parent;
+            totalSize = 0;
         }
-    }
 
-    public long getTotalSize(){
-        if(totalSize == 0) {
-            for (Directory dir : subDirectories) {
-                totalSize += dir.getTotalSize();
-            }
-            for (FileDay7 file : files) {
-                totalSize += file.size;
+        @Override
+        public boolean equals(Object o){
+            if(o.getClass() != Directory.class){return false;}
+            else{
+                Directory dirO = (Directory) o;
+                return dirO.getName().equals(this.getName());
             }
         }
-        return totalSize;
-    }
 
-    public ArrayList<Directory> getSubDirectories() {
-        return subDirectories;
-    }
+        public long getTotalSize(){
+            if(totalSize == 0) {
+                for (Directory dir : subDirectories) {
+                    totalSize += dir.getTotalSize();
+                }
+                for (File file : files) {
+                    totalSize += file.size;
+                }
+            }
+            return totalSize;
+        }
 
-    public Directory getSubDirectory(String name) {
-        return subDirectories.get(subDirectories.indexOf(new Directory(name)));
-    }
+        public ArrayList<Directory> getSubDirectories() {
+            return subDirectories;
+        }
 
-    public Directory getParent() {
-        return parent;
-    }
+        public Directory getSubDirectory(String name) {
+            return subDirectories.get(subDirectories.indexOf(new Directory(name)));
+        }
 
-    public ArrayList<FileDay7> getFiles() {
-        return files;
-    }
+        public Directory getParent() {
+            return parent;
+        }
 
-    public String getName() {
-        return name;
-    }
+        public ArrayList<File> getFiles() {
+            return files;
+        }
 
-    public void addFile(FileDay7 fileDay7){files.add(fileDay7);}
-    public void addDir(Directory dir){subDirectories.add(dir);}
+        public String getName() {
+            return name;
+        }
+
+        public void addFile(File file){files.add(file);}
+        public void addDir(Directory dir){subDirectories.add(dir);}
+    }
+    static class File{
+        String name;
+        long size;
+
+        public File(long size, String name) {
+            this.name = name;
+            this.size = size;
+        }
+    }
 }
-class FileDay7{
-    String name;
-    long size;
 
-    public FileDay7(long size, String name) {
-        this.name = name;
-        this.size = size;
-    }
-}
+

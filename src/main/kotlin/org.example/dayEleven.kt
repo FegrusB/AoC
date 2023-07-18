@@ -18,8 +18,13 @@ fun main(){
 
     for(i in 1..20){
         println("Round $i")
-        for (x in monkeys){x.inspect(monkeys)}
-        for (x in monkeys){println("${x.items}     ${x.inspected}")}
+
+        for (x in monkeys){
+            x.inspect(monkeys)
+        }
+        for (x in monkeys){
+            println("${x.items}     ${x.inspected}")
+        }
         println()
         println()
     }
@@ -37,7 +42,7 @@ fun main(){
         }
     }
     val monkeyBusiness = first * second
-    println("The top two monkeys inspected $first and $second items for a monkey business of $monkeyBusiness")
+    println("The top two monkeys inspected $first and $second items for a monkey buisness of $monkeyBusiness")
 
 }
 

@@ -6,14 +6,15 @@ fun main(){
     val monkeys: ArrayList<Monkey> = arrayListOf()
 
     for( i in 1..stream.size step 7){
-        monkeys.add(
-                Monkey(
-                        stream[i].substring(18).split(", ").map { it.toInt() }
-                        ,getOperation(stream[i+1].substring(19))
-                        ,stream[i+2].split(" ")[5].toInt()
-                        ,stream[i+3].split(" ")[9].toInt()
-                        ,stream[i+4].split(" ")[9].toInt()
-                ))
+        val items: List<Int> = stream[i].substring(18).split(", ").map { it.toInt() }
+        val operation: String = stream[i+1].substring(19)
+        val operationFun = getOperation(operation)
+        val divisor: Int = stream[i+2].split(" ")[5].toInt()
+        val trueTarget = stream[i+3].split(" ")[9].toInt()
+        val falseTarget = stream[i+4].split(" ")[9].toInt()
+
+        monkeys.add(Monkey(items,operationFun,divisor,trueTarget,falseTarget))
+
     }
 
     for(i in 1..20){
@@ -33,6 +34,7 @@ fun main(){
     var second = 0
 
     for(x in monkeys){
+
         when{
             x.inspected > first -> {
                 second = first

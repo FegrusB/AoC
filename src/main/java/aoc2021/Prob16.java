@@ -8,7 +8,7 @@ public class Prob16 {
 
         String inString = "";
 
-        Scanner myScanner = GetScanner.get("2021-16.txt");
+        Scanner myScanner = GetScanner.get(2021,"2021-16.txt");
         while (myScanner.hasNext()) {
             inString = inString.concat(myScanner.nextLine());
         }

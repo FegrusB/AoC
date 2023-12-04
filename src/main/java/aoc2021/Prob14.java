@@ -10,7 +10,7 @@ public class Prob14 {
 
     public static void main(String args[]){
 
-        Scanner myScanner = GetScanner.get("2021-14a.txt");
+        Scanner myScanner = GetScanner.get(2021,"2021-14a.txt");
         int numLoops = 40;
         String initString = myScanner.nextLine();
 

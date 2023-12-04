@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 public class Prob18 {
 
     public static void main(String[] args) {
-        Scanner myScanner = GetScanner.get("2021-18a");
+        Scanner myScanner = GetScanner.get(2021,"2021-18a");
         ArrayList<ArrayList<Character>> numbersArray = new ArrayList<>();
 
         while (myScanner.hasNextLine()) {
@@ -79,7 +79,7 @@ public class Prob18 {
                 if(Character.isDigit(number.get(leftPos))){
                     int leftNum = Character.getNumericValue(number.get(leftPos));
                     leftNum += Character.getNumericValue(rightChar);
-                    if
+
                 }
                 leftPos--;
 

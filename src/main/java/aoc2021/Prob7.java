@@ -8,7 +8,7 @@ public class Prob7 {
     public static void main(String[] args) {
 
         //Read in starting crab positions to int array. Then quick sort.
-        Scanner myScanner = GetScanner.get("2021-7.txt");
+        Scanner myScanner = GetScanner.get(2021,"2021-7.txt");
         int[] crabs = Arrays.stream(myScanner.nextLine().split(",")).mapToInt(Integer::parseInt).toArray();
         quicksort(crabs,0,crabs.length-1);
 

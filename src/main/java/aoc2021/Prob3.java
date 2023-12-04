@@ -16,7 +16,7 @@ public class Prob3 {
 		
 		//Use GetScanner to create scanner, of un-separated 0/1 chars, representing binary, copy ArrayList data of boolean arrays.
 		Scanner myScanner;
-		myScanner = GetScanner.get("2021-3.txt");
+		myScanner = GetScanner.get(2021,"2021-3.txt");
 		while(myScanner.hasNextLine()) {
 			String nl = myScanner.nextLine();
 			len = nl.length();

@@ -14,7 +14,7 @@ public class Prob12 {
     public static void main(String[] args) {
 
         //build Arraylist of connections
-        Scanner myScanner = GetScanner.get("2021-12.txt");
+        Scanner myScanner = GetScanner.get(2021,"2021-12.txt");
         caves = new ArrayList<>();
 
         //Create caves for each side of connection if they do not already exist and add connection to both caves.

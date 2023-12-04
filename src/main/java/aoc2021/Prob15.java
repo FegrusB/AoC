@@ -7,7 +7,7 @@ public class Prob15 {
 
     public static void main(String[] args) {
 
-        Scanner myScanner = GetScanner.get("2021-15.txt");
+        Scanner myScanner = GetScanner.get(2021,"2021-15.txt");
 
         final int sizeXY = 100;
         final int sizeXYBig = 500;

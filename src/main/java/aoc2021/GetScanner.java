@@ -8,10 +8,10 @@ import java.util.Scanner;
 class GetScanner {
 	
 	//
-	public static Scanner get(String fileName) {
+	public static Scanner get(int year, String fileName) {
 		
 		//strings to build address with, data folder, and absolute path to aoc2021
-		String data = "\\data\\";
+		String data = "\\data\\" + year + "\\";
 		String mainAdd = new File("").getAbsolutePath();
 		
 		//create file object with correct address and initialise myScanner

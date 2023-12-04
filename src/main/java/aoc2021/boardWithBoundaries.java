@@ -5,11 +5,11 @@ import java.util.Scanner;
 
 public class boardWithBoundaries {
 
-    public static int[][] build(final String file, final int xBounds, final int yBounds,final int boundary){
+    public static int[][] build(final int year, final String file, final int xBounds, final int yBounds,final int boundary){
         //code to build 2d array of ints with a boundary. Moved to class for reuse.
 
         //start scanner and read in initial array of ints
-        Scanner myScanner = GetScanner.get(file);
+        Scanner myScanner = GetScanner.get(year, file);
         int[][] boardIn = new int[xBounds][yBounds];
         int count = 0;
         while (myScanner.hasNext()) {

@@ -17,7 +17,7 @@ public class Prob1 {
 
 		//Use GetScanner to create scanner, of single ints on single lines, read scanner into data
 		Scanner myScanner;
-		myScanner = GetScanner.get("2021-1");
+		myScanner = GetScanner.get(2021,"2021-1");
 		while(myScanner.hasNextLine()) {int nl = myScanner.nextInt(); data.add(nl);}
 		myScanner.close();
 

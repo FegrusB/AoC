@@ -1,39 +1,8 @@
-target/
-!.mvn/wrapper/maven-wrapper.jar
-!**/src/main/**/target/
-!**/src/test/**/target/
-src/main/resources/PuzzleText/
+/out/
+/target/
 
-### IntelliJ IDEA ###
-.idea/modules.xml
-.idea/jarRepositories.xml
-.idea/compiler.xml
-.idea/libraries/
-*.iws
-*.iml
-*.ipr
+/.idea/uiDesigner.xml
+/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2023_09_19_[Changes]/shelved.patch
+/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2023_09_19__Changes_.xml
+/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2023_09_19_[Changes]/shelved.patch
 
-### Eclipse ###
-.apt_generated
-.classpath
-.factorypath
-.project
-.settings
-.springBeans
-.sts4-cache
-
-### NetBeans ###
-/nbproject/private/
-/nbbuild/
-/dist/
-/nbdist/
-/.nb-gradle/
-build/
-!**/src/main/**/build/
-!**/src/test/**/build/
-
-### VS Code ###
-.vscode/
-
-### Mac OS ###
-.DS_Store

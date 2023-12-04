@@ -1,22 +1,32 @@
 package Common;
 
-import java.io.InputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
-
+//class with single method, to start scanners for reading in puzzle inputs. Finds path to current dir, returns scanner of txt file from data folder 
 public class GetScanner {
-	public static Scanner get(int year,String fileName) {
-
-		InputStream stream = GetScanner.class.getClassLoader().getResourceAsStream("PuzzleText\\" + year + "\\" + fileName + ".txt");
-		assert stream != null;
-		return new Scanner(stream);
-
-	}
-	public static InputStream getStream(int year,String fileName) {
-
-		InputStream stream = GetScanner.class.getClassLoader().getResourceAsStream("PuzzleText\\" + year + "\\" + fileName + ".txt");
-		assert stream != null;
-		return stream;
-
+	
+	//
+	public static Scanner get(int year, String fileName) {
+		
+		//strings to build address with, data folder, and absolute path to aoc2021
+		String data = "\\data\\" + year + "\\";
+		String mainAdd = new File("").getAbsolutePath();
+		
+		//create file object with correct address and initialise myScanner
+		File myFile = new File(mainAdd + data + fileName + ".txt");
+		Scanner myScanner = null;
+		
+		//try to create scanner of file at myFile, throw exception if no file
+		try {
+			myScanner = new Scanner(myFile);
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		//return final scanner
+		return myScanner;
+	
 	}
 }

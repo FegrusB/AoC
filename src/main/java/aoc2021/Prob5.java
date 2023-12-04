@@ -1,5 +1,7 @@
 package aoc2021;
 
+import Common.GetScanner;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -8,7 +10,7 @@ public class Prob5 {
 	public static void main(String[] args) {
 
 		//sets up input scanner, and needed objects/vars 
-		Scanner myScanner = GetScanner.get(2021,"2021-5.txt");
+		Scanner myScanner = GetScanner.get(2021,"2021-5");
 		ArrayList<Line> lines = new ArrayList<>();
 		
 		//clean input, then populate lines with lines from scanner.

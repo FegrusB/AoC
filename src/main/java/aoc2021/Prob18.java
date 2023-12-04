@@ -1,5 +1,6 @@
 package aoc2021;
 
+import Common.GetScanner;
 import org.apache.commons.lang3.math.NumberUtils;
 
 import java.util.ArrayList;

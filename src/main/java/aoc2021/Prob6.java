@@ -1,5 +1,7 @@
 package aoc2021;
 
+import Common.GetScanner;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -9,7 +11,7 @@ public class Prob6 {
 	public static void main(String[] args) {
 		
 		//Read in starting fish to arraylist
-		Scanner myScanner = GetScanner.get(2021,"2021-6.txt");
+		Scanner myScanner = GetScanner.get(2021,"2021-6");
 		String[] line = myScanner.nextLine().split(",");
 		ArrayList<Integer> fishSetup = new ArrayList<>(Arrays.stream(line).mapToInt(Integer::parseInt).boxed().toList());
 		long[] fish = new long[9];

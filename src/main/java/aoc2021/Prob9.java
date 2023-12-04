@@ -1,5 +1,7 @@
 package aoc2021;
 
+import Common.boardWithBoundaries;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -11,7 +13,7 @@ public class Prob9 {
     public static void main(String[] args){
 
         //build board of ints with boundary of 10s
-        int[][] board = boardWithBoundaries.build(2021,"2021-9.txt",xBounds,yBounds,10);
+        int[][] board = boardWithBoundaries.build(2021,"2021-9",xBounds,yBounds,10);
 
 
         //loop through all points finding low points, if a bottom point, send to searchStart to find size of basin. Add returned int to basins.

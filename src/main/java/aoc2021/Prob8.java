@@ -1,5 +1,7 @@
 package aoc2021;
 
+import Common.GetScanner;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -10,7 +12,7 @@ public class Prob8 {
     public static void main(String[] args) {
 
         //Read in starting displays into two arraylists.
-        Scanner myScanner = GetScanner.get(2021,"2021-8.txt");
+        Scanner myScanner = GetScanner.get(2021,"2021-8");
         ArrayList<String[]> digits = new ArrayList<>();
         ArrayList<String[]> displays = new ArrayList<>();
         while (myScanner.hasNext()) {

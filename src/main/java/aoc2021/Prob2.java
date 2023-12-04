@@ -1,5 +1,7 @@
 package aoc2021;
 
+import Common.GetScanner;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -18,7 +20,7 @@ public class Prob2 {
 		//Use GetScanner to create scanner, of lines with string dir and int magnitude, copy to data arraylist w/ type instruction.
 		//Each line = 1 instruction, dir and magnitude split with " 
 		Scanner myScanner;
-		myScanner = GetScanner.get(2021,"2021-2.txt");
+		myScanner = GetScanner.get(2021,"2021-2");
 		while(myScanner.hasNextLine()) {
 			String[] nl = myScanner.nextLine().split(" ");
 			instruction nI = new instruction(nl[0],Integer.parseInt(nl[1]));

@@ -1,5 +1,7 @@
 package aoc2021;
 
+import Common.GetScanner;
+
 import java.util.*;
 
 public class Prob10 {
@@ -8,7 +10,7 @@ public class Prob10 {
     public static void main(String[] args){
 
         //build Arraylist of strings for input.
-        Scanner myScanner = GetScanner.get(2021,"2021-10.txt");
+        Scanner myScanner = GetScanner.get(2021,"2021-10");
         ArrayList<String> lines = new ArrayList<>();
         while(myScanner.hasNext()){lines.add(myScanner.nextLine());}
 

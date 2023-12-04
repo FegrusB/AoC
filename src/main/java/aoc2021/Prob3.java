@@ -1,5 +1,7 @@
 package aoc2021;
 
+import Common.GetScanner;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,7 +18,7 @@ public class Prob3 {
 		
 		//Use GetScanner to create scanner, of un-separated 0/1 chars, representing binary, copy ArrayList data of boolean arrays.
 		Scanner myScanner;
-		myScanner = GetScanner.get(2021,"2021-3.txt");
+		myScanner = GetScanner.get(2021,"2021-3");
 		while(myScanner.hasNextLine()) {
 			String nl = myScanner.nextLine();
 			len = nl.length();

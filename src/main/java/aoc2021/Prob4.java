@@ -1,5 +1,7 @@
 package aoc2021;
 
+import Common.GetScanner;
+
 import java.util.*;
 
 //Solve for day four, part one of AoC2021
@@ -11,7 +13,7 @@ public class Prob4 {
 		
 		//sets up input scanner, and needed objects/vars 
 		Scanner myScanner;
-		myScanner = GetScanner.get(2021,"2021-4.txt");
+		myScanner = GetScanner.get(2021,"2021-4");
 		Square[][] squares = new Square[5][5];
 		ArrayList<Board> boards = new ArrayList<>();
 		

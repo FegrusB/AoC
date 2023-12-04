@@ -1,4 +1,4 @@
-package aoc2021;
+package Common;
 
 import java.util.Arrays;
 import java.util.Scanner;

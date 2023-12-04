@@ -1,6 +1,8 @@
 package aoc2021;
 
 
+import Common.boardWithBoundaries;
+
 import java.util.Arrays;
 
 public class Prob11 {
@@ -66,7 +68,7 @@ class Board11 {
     private final boolean[][] changed;
 
     public Board11(int xBounds, int yBounds){
-        this.board = boardWithBoundaries.build(2021,"2021-11.txt",xBounds,yBounds, -1);
+        this.board = boardWithBoundaries.build(2021,"2021-11",xBounds,yBounds, -1);
         this.changed = new boolean[xBounds][yBounds];
     }
 

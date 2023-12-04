@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Prob18 {
 
     public static void main(String[] args) {
-        Scanner myScanner = GetScanner.get("2021-18");
+        Scanner myScanner = GetScanner.get(2021,"2021-18");
         ArrayList<ArrayList<String>> numbersArray = new ArrayList<>();
 
         while (myScanner.hasNextLine()) {

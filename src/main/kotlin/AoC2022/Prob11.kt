@@ -1,8 +1,10 @@
 package org.example
 
+import Common.GetScanner
+
 fun main(){
 
-    val stream = GetScanner.getStream("Day-11").bufferedReader().readLines()
+    val stream = GetScanner.getStream(2022,"Day-11").bufferedReader().readLines()
     val monkeys: ArrayList<Monkey> = arrayListOf()
 
     for( i in 1..stream.size step 7){

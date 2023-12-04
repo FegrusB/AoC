@@ -1,14 +1,16 @@
-package org.example;
+package AoC2022;
+
+import Common.GetScanner;
 
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class dayFour {
+public class Prob4 {
 
     public static void main(String[] args){
 
-        Scanner myScanner = GetScanner.get("Day-4");
+        Scanner myScanner = GetScanner.get(2022,"Day-4");
         ArrayList<ArrayList<Integer>> pairs = new ArrayList<>();
 
         while (myScanner.hasNext()){

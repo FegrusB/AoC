@@ -1,11 +1,13 @@
-package org.example;
+package AoC2022;
+
+import Common.GetScanner;
 
 import java.util.*;
 
-public class daySeven {
+public class Prob7 {
     public static void main(String[] args) {
 
-        Scanner myScanner = GetScanner.get("Day-7");
+        Scanner myScanner = GetScanner.get(2022,"Day-7");
         ArrayList<Directory> directories = new ArrayList<>();
 
         Directory workingDir = new Directory("/", new Directory(""));

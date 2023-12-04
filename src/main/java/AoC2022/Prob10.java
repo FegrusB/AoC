@@ -1,13 +1,14 @@
-package org.example;
+package AoC2022;
+
+import Common.GetScanner;
 
 import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Scanner;
 
-public class dayTen {
+public class Prob10 {
 
     public static void main(String[] args) {
-        Scanner myScanner = GetScanner.get("Day-10");
+        Scanner myScanner = GetScanner.get(2022,"Day-10");
         LinkedList<Integer[]> instructions =  new LinkedList<>();
 
         while (myScanner.hasNext()){

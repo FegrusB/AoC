@@ -1,13 +1,15 @@
-package org.example;
+package AoC2022;
+
+import Common.GetScanner;
 
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Scanner;
 
-public class dayOne {
+public class Prob1 {
     public static void main(String[] args){
 
-        Scanner myScanner = GetScanner.get("Day-1");
+        Scanner myScanner = GetScanner.get(2022,"Day-1");
         ArrayList<Integer> calories = new ArrayList<>();
 
         int current = 0;

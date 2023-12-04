@@ -1,16 +1,15 @@
-package org.example;
+package AoC2022;
 
-import com.sun.source.tree.IfTree;
+import Common.GetScanner;
 
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Scanner;
 
-public class daySix {
+public class Prob6 {
 
     public static void main(String[] args) {
 
-        Scanner myScanner = GetScanner.get("Day-6");
+        Scanner myScanner = GetScanner.get(2022,"Day-6");
         String text = myScanner.nextLine();
 
         StringBuilder out = new StringBuilder();

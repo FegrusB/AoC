@@ -1,14 +1,16 @@
-package org.example;
+package AoC2022;
+
+import Common.GetScanner;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class dayTwo {
+public class Prob2 {
 
     public static void main(String[] args) {
 
-        Scanner myScanner = GetScanner.get("Day-2");
+        Scanner myScanner = GetScanner.get(2022,"Day-2");
         ArrayList<ArrayList<String>> instructions = new ArrayList<>();
         while (myScanner.hasNext()){
             instructions.add(new ArrayList<>(List.of(myScanner.nextLine().split(" "))));

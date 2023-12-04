@@ -1,12 +1,14 @@
-package org.example;
+package AoC2022;
+
+import Common.GetScanner;
 
 import java.util.Scanner;
 
-public class dayEight {
+public class Prob8 {
 
     public static void main(String[] args) {
 
-        Scanner myScanner = GetScanner.get("Day-8");
+        Scanner myScanner = GetScanner.get(2022,"Day-8");
         int[][] trees = new int[99][];
         int count = 0;
 

@@ -1,11 +1,13 @@
-package org.example;
+package AoC2022;
+
+import Common.GetScanner;
 
 import java.util.*;
 
-public class dayNine {
+public class Prob9 {
     public static void main(String[] args) {
 
-        Scanner myScanner = GetScanner.get("Day-9");
+        Scanner myScanner = GetScanner.get(2022,"Day-9");
         LinkedList<Character> instructionQueuePart1 = new LinkedList<>();
         LinkedList<Character> instructionQueuePart2 = new LinkedList<>();
 

@@ -1,16 +1,18 @@
-package org.example;
+package AoC2022;
+
+import Common.GetScanner;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Scanner;
 
-public class dayThree {
+public class Prob3 {
 
 
     public static void main(String[] args) {
 
-        Scanner myScanner = GetScanner.get("Day-3");
+        Scanner myScanner = GetScanner.get(2022,"Day-3");
 
         ArrayList<ArrayList<String>> rucksacks = new ArrayList<>();
         ArrayList<ArrayList<String>> groups = new ArrayList<>();

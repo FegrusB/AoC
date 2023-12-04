@@ -1,4 +1,4 @@
-package org.example
+package aoc2022
 
 import Common.GetScanner
 

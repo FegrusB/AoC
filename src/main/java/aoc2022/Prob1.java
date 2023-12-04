@@ -1,4 +1,4 @@
-package AoC2022;
+package aoc2022;
 
 import Common.GetScanner;
 

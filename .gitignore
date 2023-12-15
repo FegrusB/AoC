@@ -1,8 +1,6 @@
 /out/
 /target/
 
-/.idea/uiDesigner.xml
-/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2023_09_19_[Changes]/shelved.patch
-/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2023_09_19__Changes_.xml
-/.idea/shelf/Uncommitted_changes_before_Update_at_03_03_2023_09_19_[Changes]/shelved.patch
+/.idea/
+AoC.iml
 

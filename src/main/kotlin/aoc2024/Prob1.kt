@@ -16,21 +16,13 @@ fun main(){
     listA.sort()
     listB.sort()
 
-    val countList: MutableList<Int> = MutableList(listA.size){0}
+    val map: HashMap<Int, Int> = HashMap()
 
     var sum = 0
     for (i in 0..<listA.size){
         sum += abs(listA[i] - listB[i])
-        listB.forEach {
-            if (it == listA[i]) countList[i]++
-        }
+        map.put(listA[i],listA[i] * listB.count { it == listA[i] })
     }
     println(sum)
-
-    sum = 0
-    for (i in 0..<countList.size){
-        sum += countList[i]*listA[i]
-    }
-
-    println(sum)
+    println(map.values.sum())
 }

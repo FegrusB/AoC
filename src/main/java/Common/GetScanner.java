@@ -22,4 +22,10 @@ public class GetScanner {
 		return stream;
 
 	}
+
+	public static String getCookie(){
+		InputStream stream = GetScanner.class.getClassLoader().getResourceAsStream("cookie.txt");
+		assert stream != null;
+		return new Scanner(stream).nextLine();
+	}
 }

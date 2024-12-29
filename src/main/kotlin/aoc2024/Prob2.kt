@@ -24,6 +24,8 @@ fun checkSafe(record: List<Int>, part2: Boolean): Boolean {
     var growing = false
     var failedI = -1
 
+    if (record.size < 2) return true
+
     if( record[1] > lastInt){ growing = true}
     while(safe && i < record.size ){
 
@@ -39,8 +41,15 @@ fun checkSafe(record: List<Int>, part2: Boolean): Boolean {
 
     }
 
+    var newSafe = false
+    var x = 0
     if( (!safe)&& part2){
-        safe = checkSafe(record.filterIndexed { i, _ -> i != failedI }, false) }
+        while (!newSafe && x < record.size){
+            newSafe = checkSafe(record.filterIndexed { i, _ -> i != x }, false)
+            x++
+        }
+    }
+    if (newSafe){return true}
 
     return safe
 }

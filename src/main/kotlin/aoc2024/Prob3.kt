@@ -8,12 +8,21 @@ fun main() {
 
     val text: String = GetScanner.getStream(2024,"Day-3").bufferedReader().readText()
 
-    val pattern = Pattern.compile("mul\\(\\d{1,3},\\d{1,3}\\)")
+    val pattern = Pattern.compile("mul\\(\\d{1,3},\\d{1,3}\\)|do\\(\\)|don't\\(\\)")
     val matcher = pattern.matcher(text)
     val mulList = matcher.results().map { it.group() }.toList()
 
     var sum = 0
-    mulList.forEach { sum += calculate(it) }
+    var doBool = true
+    mulList.forEach {
+        if(it == "do()" ){
+            doBool = true
+        } else if(it == "don't()" ){
+            doBool = false
+        } else if(doBool) {
+            sum += calculate(it)
+        }
+    }
 
     println(sum)
 

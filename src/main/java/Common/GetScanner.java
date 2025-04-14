@@ -1,7 +1,5 @@
 package Common;
 
-import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.Scanner;
 
@@ -24,8 +22,10 @@ public class GetScanner {
 	}
 
 	public static String getCookie(){
+
 		InputStream stream = GetScanner.class.getClassLoader().getResourceAsStream("cookie.txt");
-		assert stream != null;
+		if(stream == null){throw new RuntimeException("AoC cookie not found, add cookie.txt to resources");}
 		return new Scanner(stream).nextLine();
+
 	}
 }

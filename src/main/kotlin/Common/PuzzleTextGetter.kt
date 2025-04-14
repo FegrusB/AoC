@@ -24,8 +24,8 @@ suspend fun getPuzzleText(year: Int, day: Int = 30): String {
 }
 
 fun main( ) = kotlinx.coroutines.runBlocking {
-    val year = 2024
-    val day = 3
+    val year = 2021
+    val day = 5
 
     val f = File("src/main/resources/PuzzleText/$year/Day-$day.txt")
     withContext(Dispatchers.IO) {
